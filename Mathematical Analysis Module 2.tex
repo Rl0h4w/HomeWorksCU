@@ -1,0 +1,564 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+\usepackage{float}
+
+% Параметры страницы
+\geometry{top=2cm,bottom=2cm,left=2.5cm,right=2.5cm}
+\geometry{a4paper, margin=1in}
+
+% Заголовок документа
+\title{Домашнее задание}
+\author{Студент: Ваше Имя Здесь}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Математический анализ}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Лохов Ростислав}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный Университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Предел последовательности}
+
+\subsection{Задача 1}
+По заданному значению $\epsilon$ укажи наименьший номер $N$, начиная с которого выполняется неравенство $|x_n − a| < \epsilon$, если
+\begin{enumerate}
+    \item $x_n = \frac{50}{n}, a = 0$:
+        \begin{itemize}
+            \item $\epsilon_1 = 1000$
+            \item $\epsilon_2 = 1$
+            \item $\epsilon_3 = 0.001$
+        \end{itemize}
+    \item $x_n = \frac{50 + (-1)^n \cdot 50}{n}, a = 0$:
+        \begin{itemize}
+            \item $\epsilon_1 = 1000$
+            \item $\epsilon_2 = 1$
+            \item $\epsilon_3 = 0.001$
+        \end{itemize}
+\end{enumerate}
+\textbf{Решение: }
+\begin{enumerate}
+    \item $x_n = \frac{50}{n}, a = 0$:
+        \begin{itemize}
+            \item n = 1
+            \item n = 51
+            \item n = 50001
+        \end{itemize}
+    \item $x_n = \frac{50 + (-1)^n \cdot 50}{n}, a = 0$:
+        \begin{itemize}
+            \item n=1
+            \item n=101
+            \item n=100001
+        \end{itemize}
+\end{enumerate}
+\subsection{Задача 2}
+Докажи по определению:
+\[
+\text{а)} \lim_{n \to \infty} \frac{n}{n+1} = 1; \quad
+\text{б)} \lim_{n \to \infty} \frac{n}{2n+1} = \frac{1}{2}; \quad
+\text{в)} \lim_{n \to \infty} \frac{1}{\sqrt{n}} = 0.
+\]
+\textbf{Решение: }
+$\lim_{n \to \infty} x_n = a \in \mathbb{R}, \text{если} \forall \psilon > 0 \exists N \in \mathbb{N}: \forall n \ge N |x_n-a|<\epsilon$ \\
+\text{a)}
+\[
+|\frac{n}{n+1}-1|<\epsilon
+\]
+\[
+|\frac{-1}{n+1}|<\epsilon
+\]
+\[
+\frac{1}{n+1}<\epsilon
+\]
+\[
+\frac{1}{\epsilon}-1 < n
+\]
+чтд\\
+\text{б)}
+\[
+|\frac{n}{2n+1}-0.5|<\epsilon
+\]
+\[
+|\frac{-1}{4n+2}|<\epsilon
+\]
+\[
+\frac{1}{4n+2}<\epsilon
+\]
+\[
+\frac{1}{4\epsilon}-0.5<n
+\]
+чтд\\
+\text{в)}
+\[
+\frac{1}{\epsilon^2}<n
+\]
+чтд\\
+\subsection{Задача 3}
+Какие из следующих утверждений эквивалентны тому, что $\lim_{n \to \infty} x_n = a \in \mathbb{R}$:
+\begin{itemize}
+    \item а) $\forall \epsilon > 0 \exists N \in \mathbb{N} : \forall n \geq N |x_n - a| \leq \epsilon$
+    \item б) $\forall \epsilon > 0 \exists N \in \mathbb{N} : \forall n \geq N |x_n - a| < \epsilon$
+    \item в) $\forall \epsilon > 0 \forall n |x_n - a| < \epsilon$
+    \item г) $\forall \epsilon > 0 \exists N \in \mathbb{N} : \forall n \geq N |x_n - a| < 11\epsilon$
+    \item д) $\forall \epsilon > 0 \exists X \in \mathbb{R} : \forall n \geq X |x_n - a| < \epsilon$
+    \item е) $\forall \epsilon > 0 \exists N \in \mathbb{N} : \forall n > N |x_n - a| < \epsilon$
+    \item ж) $\exists N \in \mathbb{N} : \forall \epsilon > 0 \forall n \geq N |x_n - a| \leq \epsilon$
+    \item з) $\forall \epsilon > 0 \forall N \in \mathbb{N} \exists n \geq N |x_n - a| \leq \epsilon$
+    \item и) $\forall \epsilon > 0 \exists N \in \mathbb{N} : \forall n \geq N |x_n - a| < \epsilon^2$
+\end{itemize}
+\textbf{Решение:}
+a, г, д, е, и
+\subsection{Задача 4}
+Докажи, что если существует конечный предел $\lim_{n \to \infty} a_n = A$, и при этом $A > 0$, то существует такой номер, начиная с которого все члены последовательности положительны:
+\[
+\exists N : \forall n \geq N \ a_n > 0.
+\]
+Сформулируй аналогичное утверждение для случаев:
+\begin{itemize}
+    \item а) $A < 0$
+    \item б) $A > 1$
+\end{itemize}
+\textbf{Решение:}
+\[
+|a_n-A|<\epsilon 
+\]
+
+\[
+-A/3<a_n-A<A/3
+\]
+
+\[
+-A<3a_n-3A<A
+\]
+\[
+2A<3a_n<4A
+\]
+
+Таким образом существует такой номер, начиная с которого все члены положительны т.к A>0\\
+а)
+\[
+|a_n-A|<\epsilon 
+\]
+
+\[
+-|A|/3<a_n-A<|A|/3
+\]
+\[
+2A<3a_n<4A
+\]
+\[
+\exists N \in \mathbb{N} : \forall n \geq N, \ a_n < 0.
+\]
+
+б)
+\[
+|a_n-A|<\epsilon 
+\]
+
+
+\[
+\frac{A + 1}{2} < a_n < \frac{3A - 1}{2}.
+\]
+
+\subsection{Задача 5}
+Существует ли последовательность $x_n$ такая, что:
+\begin{enumerate}
+    \item а) $\lim_{n \to \infty} x_n = a \in \mathbb{R}$, и при этом $\forall n \in \mathbb{N} \ x_n < a$;
+    \item б) $\lim_{n \to \infty} x_n = a \in \mathbb{R}$, и при этом $\forall n \in \mathbb{N} \ \exists k > n \ \exists l > n : x_k < a, x_l > a$?
+\end{enumerate}
+\textbf{Решение:}
+\text{а)}
+да
+\[
+x_n=a-\frac{1}{n}
+\]
+
+\text{б)}
+да
+\[
+x_n=a-\frac{(-1)^n}{n}
+\]
+\subsection{Задача 6}
+Последовательность $\{x_n\}$ удовлетворяет условию $\forall \epsilon < 0 \exists N : \forall n \geq N \ x_n > \epsilon$. Означает ли это, что последовательность $x_n$:
+\begin{enumerate}
+    \item а) сходится;
+    \item б) не имеет конечного предела?
+\end{enumerate}
+\textbf{Решение:}
+\begin{enumerate}
+    \item a) нет
+    \item б) нет
+\end{enumerate}
+\subsection{Задача 7}
+Докажи, что последовательность $x_n = \sin \frac{\pi n}{2}$ расходится.
+\textbf{Решение: }
+для ряда натуральных чисел будет принимать значения 1,0,−1,0,1,0,−1,0...\\
+тогда допустим есть предел a для $\epsilon=0.5$:\\
+тогда по определению:\\
+
+\[
+|\sin \frac{\pi n}{2}-a|<0.5
+\]
+тогда переберем значения $x_n$, благо их немного и всего 3: 1 0 -1, для каждого $x_n$ из этого значения получим a, которые имеют разные значения для каждого $x_n$. ЧТД
+\subsection{Задача 8}
+\begin{enumerate}
+    \item а) Последовательности $\{x_n\}, \{y_n\}$ и $\{z_n\}$ имеют одно и то же множество значений. Приведи пример таких последовательностей, что $\{x_n\}$ расходится, а $\{y_n\}$ и $\{z_n\}$ обе сходятся, но при этом $\lim_{n \to \infty} y_n \neq \lim_{n \to \infty} z_n$.
+    \item б) Последовательности $\{y_n\}$ и $\{z_n\}$ имеют одно и то же множество значений, обе они сходятся, но их пределы различны. Может ли это множество значений быть бесконечным?
+\end{enumerate}
+
+\textbf{Решение:}
+
+a)
+\[
+x_n = (-1)^n, y_n = 1, z_n = 0
+\]
+
+б) нет, т.к при различных пределах окрестности при малых $\epsilon$ не равны.
+
+\subsection{Задача 9}
+Пусть $\{x_n\}$ сходится; $m = \inf_{k \in \mathbb{N}} x_k$, $M = \sup_{k \in \mathbb{N}} x_k$. Докажи, что существует член последовательности, равный или $m$, или $M$.
+\textbf{Решение: }
+\[
+\sup = \forall n \in \mathbb{N} x_n \le m
+\]
+по определению, $\exists n \in \mathbb{N}: x_n = m$
+\[
+\inf = \forall n \in \mathbb{N} x_n \ge M
+\]
+по определению, $\exists n \in \mathbb{N}: x_n = M$
+
+\subsection{Задача 10}
+Последовательность $\{b_k\}$ получена из последовательности $\{a_n\}$ перестановкой её членов. Докажи, что если $\{a_n\}$ сходится, то $\{b_k\}$ сходится и имеет тот же самый предел, а если $\{a_n\}$ расходится, то и $\{b_k\}$ также расходится.
+
+\textbf{Решение: }
+Очевидно из условия, что множества равномощны и равны(каждому элементу из множества а соотвествует точно такой же элемент из множества б), исходя из этого следует, что если для множества а, существует или не существует предел, то и для б существует или не существует предел соответственно.
+
+\subsection{Задача 11}
+Последовательность $\{x_n\}$ такова, что $\lim_{k \to \infty} x_{2k} = a$, $\lim_{k \to \infty} x_{2k-1} = b$, где $a < b$. Докажи, что $\{x_n\}$ не имеет конечного предела.
+
+\textbf{Решение: }
+на окресности $+\infty $ получаем последовательность вида {...a, b, a, b...} которая не имеет предела.
+
+\subsection{Задача 12}
+Исследуй на сходимость последовательности:
+\begin{enumerate}
+    \item а) $y_n = \frac{1}{n} \sum_{k=1}^{n} (-1)^{n-k}k$;
+    \item б) $z_n = \frac{1}{n} \sum_{k=1}^{n} (-1)^{k-1}k$.
+\end{enumerate}
+\textbf{Решение:}
+\begin{enumerate}
+    \item a)  Если взглянем внимательно на выражение, то получим, что выражение сокращается до двух вариантов:
+
+    При четном n:
+    \[
+    y_n = 0.5
+    \]
+    
+    
+    При нечетном n:
+    \[
+    1/n(1-2+3-4+5..)
+    \]
+    получим, что с ростом n мы будем получать по порядку:
+    \[
+    \frac{1}{1};\frac{5-2}{5};\frac{7-3}{5}...
+    \]
+    \[
+    1-\frac{\frac{n-1}{2}}{n}
+    \]
+    \[
+    1-\frac{n-1}{2n}
+    \] предел которой - 0.5
+    оба предела равны при $n \to \infty$ и равны 0.5, значит последовательность сходится.
+
+    \item б) 
+    то же самое, получаем: 
+    \[
+    z_n = 
+    \begin{cases} 
+    \frac{m^2 + \frac{n(n+1)}{2}}{n} & \text{если } n \text{ четное} \\ 
+    \frac{m^2 + m + \frac{n(n+1)}{2}}{n} & \text{если } n \text{ нечетное} 
+    \end{cases}
+    \]
+    \( m \) = \( \frac{n}{2} \) при четном \( n \) и \( m = \frac{n-1}{2} \) при нечетном \( n \).
+    таким образом последовательность не сходится
+
+\end{enumerate}
+
+\subsection{Задача 13}
+Верно ли, что:
+\begin{enumerate}
+    \item а) произведение двух бесконечно малых последовательностей также является бесконечно малой;
+    \item б) произведение бесконечно малой последовательности на ограниченную является бесконечно малой;
+    \item в) сумма бесконечно большой и ограниченной последовательностей является бесконечно большой;
+    \item г) произведение бесконечно большой последовательности на ограниченную является бесконечно большой?
+\end{enumerate}
+\textbf{Решение:} Все утверждения верны
+
+\subsection{Задача 14}
+Рассмотрим утверждения:
+\begin{enumerate}
+    \item 1. последовательность $\{|x_k|\}$ сходится;
+    \item 2. последовательность $\{x_k\}$ сходится.
+\end{enumerate}
+Верно ли что:
+\begin{enumerate}
+    \item а) из первого следует второе;
+    \item б) из второго следует первое?
+\end{enumerate}
+Приведи обоснование.
+\textbf{Решение: }
+\begin{enumerate}
+    \item a) нет, допустим при $x_k=(-1)^k$ из 1 не будет следовать второе
+    \item б) да, т.к сходящаяся последовательность обязательно имеет сходящуюся последовательность модулей.
+\end{enumerate}
+
+\subsection{Задача 15}
+Придумай какие-нибудь последовательности $\{x_n\}$ и $\{y_n\}$ такие, что:
+\begin{enumerate}
+    \item а) $\forall n \in \mathbb{N} \ x_n < y_n$, и при этом $\lim_{n \to \infty} x_n = \lim_{n \to \infty} y_n$;
+    \item б) $\forall n \in \mathbb{N} \ \frac{x_n}{y_n} > 10$, и при этом $\lim_{n \to \infty} x_n = \lim_{n \to \infty} y_n$.
+\end{enumerate}
+\textbf{Решение: }
+
+a)
+   \[
+   x_n = 1 - \frac{1}{n}, \quad y_n = 1
+   \]
+
+б)
+   \[
+   x_n = 10 + \frac{1}{n}, \quad y_n = 1 + \frac{1}{n}
+   \]
+
+\subsection{Задача 16}
+Даны бесконечно большие последовательности $\{x_n\}$ и $\{y_n\}$. Возможно ли, что предел $\lim_{n \to \infty} (x_n - y_n)$:
+\begin{enumerate}
+    \item а) равен $+\infty$;
+    \item б) равен $10$;
+    \item в) равен $-\infty$;
+    \item г) не существует?
+\end{enumerate}
+\textbf{Решение: }
+\begin{enumerate}
+    \item а) $x_n = n; y_n = 10-n$
+    \item б) $x_n = n; y_n = n-10$
+    \item в) $x_n = n; y_n = 2n-10$
+    \item г) $x_n = n; y_n = n+(-1)^n$
+\end{enumerate}
+\subsection{Задача 17}
+Даны бесконечно малые последовательности $\{x_n\}$ и $\{y_n\}$. Возможно ли, что предел $\lim_{n \to \infty} \frac{x_n}{y_n}$:
+\begin{enumerate}
+    \item а) равен $0$;
+    \item б) равен $1$;
+    \item в) равен $\infty$;
+    \item г) не существует?
+\end{enumerate}
+\textbf{Решение: }
+\begin{enumerate}
+    \item а) $x_n = \frac{1}{n}; y_n = \frac{1}{n^2}$
+    \item б) $x_n = \frac{1}{n}; y_n = \frac{1}{n}$
+    \item в) не существует, отношение двух бесконечно малых последовательностей принимает значение от 0 до 1.
+    \item г) $x_n = \frac{(-1)^n}{n}; y_n = \frac{1}{n}$
+\end{enumerate}
+
+\subsection{Задача 18}
+Известно, что $\lim_{n \to \infty} (x_n y_n) = 0$. Верно ли, что хотя бы одна из последовательностей $\{x_n\}$ или $\{y_n\}$ является бесконечно малой?
+\textbf{Решение: }
+Да, верно, достаточно, чтобы одна из последовательностей была бесконечно малой(Для того чтобы было верно - одна функция должна убывать быстрее другой)
+
+\subsection{Задача 19}
+Найди пределы:
+\begin{enumerate}
+    \item а) $\lim_{n \to \infty} \frac{10n^2 - n^3 - 12}{n^3 + 1000n - 4}$;
+    \item б) $\lim_{n \to \infty} \left(\frac{n^2}{n+5} - \frac{n^2}{n+8}\right)$;
+    \item в) $\lim_{n \to \infty} \left( n + \frac{10}{\frac{5}{n^2}-\frac{10}{n}-\frac{1}{n^3}})\right)$.
+\end{enumerate}
+\textbf{Решение: }
+\begin{enumerate}
+    \item а) -1
+    \item б) 3
+    \item в) -0.5
+\end{enumerate}
+
+\subsection{Задача 20}
+Найди пределы:
+\begin{enumerate}
+    \item а) $\lim_{n \to \infty} \frac{(3+n)^{200} - n^{200} - 600n^{199}}{5n^{198} - 3n - 1}$;
+    \item б) $\lim_{n \to \infty} \frac{\ln(n^2 - 3n + 4)}{\ln(n^5 - 3n + 4)}$;
+    \item в) $\lim_{k \to \infty} k^2 \left((1 + \frac{m}{k})^n - (1 + \frac{n}{k})^m\right), \ m, n \in \mathbb{N}$.
+\end{enumerate}
+\textbf{Решение:}
+\begin{enumerate}
+    \item а) $\lim_{n \to \infty} \frac{(3+n)^{200} - n^{200} - 600n^{199}}{5n^{198} - 3n - 1}$;
+    \[
+    \frac{...9\cdot n^{198} \cdot \binom{200}{199}}{5n^{198}-3n-1} = \frac{9*19900}{5}=35820
+    \]
+    
+    \item б) $\lim_{n \to \infty} \frac{\ln(n^2 - 3n + 4)}{\ln(n^5 - 3n + 4)}=0.4$(вынес наиб переменную со степенью, а дальше по св-ву логарифмов);
+    
+    \item в) $\lim_{k \to \infty} k^2 \left((1 + \frac{m}{k})^n - (1 + \frac{n}{k})^m\right), \ m, n \in \mathbb{N}$
+   \[
+   (1 + \frac{m}{k})^n = 1 + \frac{nm}{k} + \frac{n(n-1)m^2}{2k^2} + O\left(\frac{1}{k^3}\right).
+   \]
+
+   \[
+   (1 + \frac{n}{k})^m = 1 + \frac{mn}{k} + \frac{m(m-1)n^2}{2k^2} + O\left(\frac{1}{k^3}\right).
+   \]
+
+    \[
+    \frac{nm - mn}{k} + \left(\frac{n(n-1)m^2}{2k^2} - \frac{m(m-1)n^2}{2k^2}\right) + O\left(\frac{1}{k^3}\right).
+    \]
+
+    \[
+    k^2 \left((1 + \frac{m}{k})^n - (1 + \frac{n}{k})^m\right) = k^2 \left(\frac{n(n-1)m^2 - m(m-1)n^2}{2k^2} + O\left(\frac{1}{k^3}\right)\right).
+    \]
+
+    \[
+    \frac{n(n-1)m^2 - m(m-1)n^2}{2} + O\left(\frac{1}{k}\right).
+    \]
+
+    \[
+    \frac{n(n-1)m^2 - m(m-1)n^2}{2}.
+    \]
+\end{enumerate}
+
+\subsection{Задача 21}
+Последовательность $\{x_n\}$ сходится, а последовательность $\{y_n\}$ расходится. Докажи, что последовательность $\{x_n + y_n\}$ расходится.
+
+\textbf{Решение: }
+
+Пусть $\lim_{n \to \infty} x_n = A$, допустим $\lim_{n \to \infty} x_n+y_n = B$, по идее, чтобы получить предел $y_n$ нам надо вычесть из B A, но мы не получим такого значения, т.к из условия $y_n$ не имеет предела.
+
+\subsection{Задача 22}
+Для каждого значения параметра $\alpha$ установи предел $\lim_{n \to \infty} \left(\frac{n^3}{n^2 + 2} - \alpha\frac{n^2}{n+3}\right)$.
+
+\textbf{Решение: }
+
+\[
+\frac{n^2(-an^2-2a+n^2+3n)}{(n+3)(n^2+2)}
+\]
+
+\[
+\frac{-an^4-2an^2+n^4+3n^3}{(n+3)(n^2+2)}
+\]
+
+\[
+\frac{-an^4-2an^2+n^4+3n^3}{(n+3)(n^2+2)}
+\]
+
+\[
+\frac{n^4(1-a)-2an^2+3n^3}{(n+3)(n^2+2)}
+\]
+
+\[
+при а<1: предел -\infty, a=1: 3, a>1: \infty
+\]
+\subsection{Задача 23}
+Найди пределы:
+\begin{enumerate}
+    \item а) $\lim_{n \to \infty} \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)}$;
+    \item б) $\lim_{n \to \infty} \frac{1}{\sqrt{n}} \sum_{k=1}^{n} \frac{1}{\sqrt{2k-1} + \sqrt{2k+1}}$.
+\end{enumerate}
+\textbf{Решение:}
+\begin{enumerate}
+    \item а) $\lim_{n \to \infty} \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)}$;
+    \[
+    \lim_{n \to \infty} \sum_{k=1}^{n} \frac{1}{2k-1} - \frac{1}{2k+1}
+    \]
+
+    \[
+    \lim_{n \to \infty} \frac{1}{2} \left( 1 - \frac{1}{2n+1} \right) = 0.5
+    \]
+    
+    \item б) $\lim_{n \to \infty} \frac{1}{\sqrt{n}} \sum_{k=1}^{n} \frac{1}{\sqrt{2k-1} + \sqrt{2k+1}}$.
+    домножим на сопряженное, получим: 
+    \[
+    \lim_{n \to \infty} \frac{1}{\sqrt{n}} \sum_{k=1}^{n} \frac{\sqrt{2k-1} + \sqrt{2k+1}}{2}
+    \]
+
+    \[
+    \lim_{n \to \infty} \frac{1}{\sqrt{n}} \cdot \frac{1}{2} \left( \sqrt{2n+1} - 1 \right) = \frac{1}{2} \lim_{n \to \infty} \frac{\sqrt{2n+1} - 1}{\sqrt{n}} = \frac{\sqrt{2}}{2}
+    \]
+    
+\end{enumerate}
+\subsection{Задача 24}
+Найди пределы:
+\begin{enumerate}
+    \item а) $\lim_{n \to \infty} \left(\sqrt{n^2 + n} - \sqrt{n^2 - n}\right)$;
+    \item б) $\lim_{n \to \infty} \frac{1}{n\left(\sqrt{n^2-10} - n\right)}$.
+\end{enumerate}
+\textbf{Решение: }
+\begin{enumerate}
+    \item а) $\lim_{n \to \infty} \left(\sqrt{n^2 + n} - \sqrt{n^2 - n}\right)$;
+    домножим на сопряженное и вынесем $n^2$ из корня
+    \[
+    \lim_{n \to \infty} \frac{2}{\sqrt{1 + \frac{1}{n}} + \sqrt{1 - \frac{1}{n}}}=1
+    \]
+    \item б) $\lim_{n \to \infty} \frac{1}{n\left(\sqrt{n^2-10} - n\right)}$.
+    \[
+    \lim_{n \to \infty} \frac{\sqrt{n^2-10}+n}{-10n}
+    \]
+
+    \[
+    \lim_{n \to \infty} \frac{\sqrt{1-\frac{10}{n^2}}+1}{-10}=-0.2
+    \]
+\end{enumerate}
+
+\subsection{Задача 25}
+Для каждой пары параметров $(a; b)$, где $a > 0$, найди предел последовательности (или установи, что он не существует):
+\begin{enumerate}
+    \item а) $x_n = \sqrt{an^2 + bn + 5} - 4n$;
+    \[
+    x_n = \frac{(a - 16) n^2 + b n + 5}{\sqrt{a n^2 + b n + 5} + 4n}
+    \]
+    \[
+    x_n = \frac{(a-16)n + b + \frac{5}{n}}{\sqrt{a+\frac{b}{n}+\frac{5}{n^2}} + 4}
+    \]
+    при $a<16, a>16, a=16$ предел будет соответственно $-\infty, \infty, \frac{b}{8}$
+
+    
+    \item б) $y_n = \sqrt{(n + a)(n + b)} - n$.
+    \[
+    y_n = \frac{(a + b) n + a b}{\sqrt{n^2 + (a + b) n + a b} + n}
+    \]
+    \[
+    \lim_{n \to \infty} y_n = \lim_{n \to \infty} \frac{(a + b) + \frac{a b}{n}}{\sqrt{1 + \frac{a + b}{n} + \frac{a b}{n^2}} + 1}=\frac{a+b}{2}
+    \]
+\end{enumerate}
+
+\end{document}

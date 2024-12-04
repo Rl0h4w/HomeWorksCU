@@ -1,0 +1,541 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+\usepackage{float}
+
+% Параметры страницы
+\geometry{top=2cm,bottom=2cm,left=2.5cm,right=2.5cm}
+\geometry{a4paper, margin=1in}
+
+% Заголовок документа
+\title{Домашнее задание}
+\author{Студент: Лохов Ростислав}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Линейная Алгебра}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Лохов Ростислав}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный Университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Системы линейных уравнений и матрицы}
+
+\subsection{Задача 1}
+
+\textbf{Условие задачи:}
+
+Найди определитель матрицы:
+
+\[
+A = \begin{pmatrix}
+5 & 1 & 7 & 3 \\
+1 & 0 & 2 & 0 \\
+-2 & 2 & 5 & 4 \\
+3 & 0 & 4 & 0 \\
+\end{pmatrix}
+\]
+
+\textbf{Решение:}
+
+% Вставьте решение здесь
+
+\vspace{1cm}
+
+\subsection{Задача 2}
+
+\textbf{Условие задачи:}
+
+Найди все значения параметра \( k \), при которых матрица \( A \) будет обратимой:
+
+\[
+A = \begin{pmatrix}
+k & 4 & -1 \\
+3 & k & 1 \\
+k & 2 & k \\
+\end{pmatrix}
+\]
+
+\textbf{Решение:}
+
+% Вставьте решение здесь
+
+\vspace{1cm}
+
+\subsection{Задача 3}
+
+\textbf{Условие задачи:}
+
+Для матрицы \( A \in M_{3 \times 3}(\mathbb{R}) \) найди обратную по явной формуле (через присоединённую матрицу):
+
+\[
+A = \begin{pmatrix}
+-1 & 2 & 2 \\
+1 & -1 & -1 \\
+-1 & 1 & 2 \\
+\end{pmatrix}
+\]
+
+\textbf{Решение:}
+
+% Вставьте решение здесь
+
+\vspace{1cm}
+
+\subsection{Задача 4}
+
+\textbf{Условие задачи:}
+
+Реши систему линейных уравнений методом Крамера:
+
+\[
+\begin{cases}
+x_1 + 2x_2 - x_3 = -7, \\
+-2x_1 - 5x_2 + 4x_3 = 4, \\
+x_1 + 3x_2 - 2x_3 = 4.
+\end{cases}
+\]
+
+\textbf{Решение:}
+
+\[
+\Delta = 
+1 \cdot \begin{vmatrix}
+-5 & 4 \\
+3 & -2
+\end{vmatrix}
+- 2 \cdot \begin{vmatrix}
+-2 & 4 \\
+1 & -2
+\end{vmatrix}
+-1 \cdot \begin{vmatrix}
+-2 & -5 \\
+1 & 3
+\end{vmatrix}
+\]
+
+\[
+\Delta_1 = 
+-7 \cdot \begin{vmatrix}
+-5 & 4 \\
+3 & -2
+\end{vmatrix}
+- 2 \cdot \begin{vmatrix}
+4 & 4 \\
+4 & -2
+\end{vmatrix}
+-1 \cdot \begin{vmatrix}
+4 & -5 \\
+4 & 3
+\end{vmatrix}=30
+\]
+
+\[
+\Delta_2 = 
+1 \cdot \begin{vmatrix}
+4 & 4 \\
+4 & -2
+\end{vmatrix}
+- (-7) \cdot \begin{vmatrix}
+-2 & 4 \\
+1 & -2
+\end{vmatrix}
+-1 \cdot \begin{vmatrix}
+-2 & 4 \\
+1 & 4
+\end{vmatrix}=-12
+\]
+
+\[
+\Delta_3 = 
+1 \cdot \begin{vmatrix}
+-5 & 4 \\
+3 & 4
+\end{vmatrix}
+- 2 \cdot \begin{vmatrix}
+-2 & 4 \\
+1 & 4
+\end{vmatrix}
+-7 \cdot \begin{vmatrix}
+-2 & -5 \\
+1 & 3
+\end{vmatrix}=-1
+\]
+
+\[
+x_1 = \frac{\Delta_1}{\Delta} = \frac{30}{-1} = -30,
+\]
+
+\[
+x_2 = \frac{\Delta_2}{\Delta} = \frac{-12}{-1} = 12,
+\]
+
+\[
+x_3 = \frac{\Delta_3}{\Delta} = \frac{-1}{-1} = 1.
+\]
+
+\vspace{1cm}
+
+\subsection{Задача 5}
+
+\textbf{Условие задачи:}
+
+Пользуясь лишь свойствами определителя, докажи равенство:
+
+\[
+\det\begin{pmatrix}
+1 & a & bc \\
+1 & b & ca \\
+1 & c & ab \\
+\end{pmatrix} = \det\begin{pmatrix}
+1 & a & a^2 \\
+1 & b & b^2 \\
+1 & c & c^2 \\
+\end{pmatrix}
+\]
+
+\textbf{Решение:}
+Вторая матрица - матрица Вандермонда. $\Delta = (b-a)(c-a)(c-b)$
+Первая матрица - обычная. $\Delta = ab^2 - a^2b + a^2c - ac^2 + bc^2 - b^2c = (b - a)(c - a)(c - b)$ ЧТД
+
+\vspace{1cm}
+
+\subsection{Задача 6}
+
+\textbf{Условие задачи:}
+
+Пусть матрица \( A \) имеет вид \( A = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix} \). При этом \( \det(A) = -7 \). Найди:
+
+\begin{enumerate}
+    \item \( \det(3A) \);
+    \item \( \det(2A^{-1}) \);
+    \item \( \det\begin{pmatrix} a & g & d \\ b & h & e \\ c & i & f \end{pmatrix} \).
+\end{enumerate}
+
+\textbf{Решение:}
+
+% Вставьте решение здесь
+
+\vspace{1cm}
+
+\subsection{Задача 7}
+
+\textbf{Условие задачи:}
+
+С помощью присоединённой матрицы найди матрицу, обратную к матрице \( A \):
+
+\[
+A = \begin{pmatrix}
+3 & 6 & 2 \\
+-2 & 3 & 1 \\
+1 & 2 & 1 \\
+\end{pmatrix}
+\]
+
+\textbf{Решение:}
+$A^{-1}=\frac{1}{det(A)}*adj(A)$
+\[
+\text{Cof}(A) = \begin{pmatrix}
+1 & 3 & -7 \\
+-2 & 1 & 0 \\
+0 & -7 & 21 \\
+\end{pmatrix}
+\]
+$adj(A) = Cof(A)^T$
+
+det(A) = 7
+\[
+A^{-1} = \begin{pmatrix}
+\frac{1}{7} & -\frac{2}{7} & 0 \\
+\frac{3}{7} & \frac{1}{7} & -1 \\
+-1 & 0 & 3 \\
+\end{pmatrix}
+\]
+
+\vspace{1cm}
+
+\subsection{Задача 8}
+
+\textbf{Условие задачи:}
+
+Докажи, что если все элементы квадратной матрицы 3-го порядка равны \( \pm1 \), то её определитель является чётным числом.
+
+\textbf{Решение:}
+
+Будем считать всё в отрезках значений
+\[
+det(A) = \pm\{-2, 0,  2\}\mp \{-2,  0, 2\}\pm \{-2,  0, 2\}
+\] 
+можем вынести 2 из отрезков значений, тогда получим, что определитель кратен 2, т.е четный
+\vspace{1cm}
+
+\subsection{Задача 9}
+
+\textbf{Условие задачи:}
+
+Посчитай определитель матрицы \( A \in M_{n \times n}(\mathbb{R}) \), где
+
+\[
+A = \begin{pmatrix}
+x & x & 1 & \dots & 1 & 1 \\
+1 & x & x & \ddots & & \vdots \\
+\vdots & \ddots & \ddots & \ddots & \vdots & \vdots \\
+\vdots & & \ddots & \ddots & x & 1 \\
+1 & \dots & \dots & 1 & x & x \\
+x & 1 & \dots & \dots & 1 & x \\
+\end{pmatrix}
+\]
+
+В ней все пропущенные места заполнены единицами. Например, при \( n = 6 \) получим:
+
+\[
+A = \begin{pmatrix}
+x & 1 & 1 & 1 & 1 & x \\
+1 & x & 1 & 1 & x & 1 \\
+1 & 1 & x & x & 1 & 1 \\
+1 & 1 & 1 & x & 1 & 1 \\
+1 & 1 & 1 & 1 & x & 1 \\
+1 & 1 & 1 & 1 & 1 & x \\
+\end{pmatrix}
+\]
+
+\textbf{Решение:}
+Матрица четная и квадратная, значит можем разбить на блоки одинаковой размерности.
+\[
+A = \begin{pmatrix}
+B & C \\
+D & E \\
+\end{pmatrix}
+\]
+По формуле Шурмана: 
+\[
+\det(A) = \det(B) \cdot \det(E - D B^{-1} C)
+\]
+B = aI+bJ
+\[
+\det(B) = (x - 1)^{m - 1} (x + m - 1)
+\]
+
+\[
+D B^{-1} = J \left( \frac{1}{x - 1} I - \frac{1}{(x - 1)(x - 1 +     m)} J \right) = \frac{1}{x - 1} J - \frac{m}{(x - 1)(x - 1 + m)} J
+\]
+\[
+D B^{-1} = \left( \frac{1}{x - 1} - \frac{m}{(x - 1)(x - 1 + m)} \right) J = \frac{x - 1 + m - m}{(x - 1)(x - 1 + m)} J = \frac{1}{x - 1 + m} J
+\]
+\[
+J C = m (m - 1 + x) J
+\]
+\[
+D B^{-1} C = \frac{1}{x - 1 + m} J C = \frac{1}{x - 1 + m} \cdot m (m - 1 + x) J = J
+\]
+\[
+E - D B^{-1} C = B - J
+\]
+\[
+B = (x - 1)I + J
+\]
+\[
+E - D B^{-1} C = (x - 1)I + J - J = (x - 1)I
+\]
+\[
+E - D B^{-1} C = (x - 1)I
+\]
+
+\[
+\det(A) = \det(B) \cdot \det(E - D B^{-1} C) = (x - 1)^{m - 1} (x - 1 + m) \cdot (x - 1)^m
+\]
+
+n = 2m
+
+\[
+\det(A) = (x - 1)^{n - 1} \left( x + \frac{n}{2} - 1 \right)
+\]
+
+
+\vspace{1cm}
+
+\subsection{Задача 10}
+
+\textbf{Условие задачи:}
+
+Пусть \( A \in M_{n \times n}(\mathbb{R}) \) — произвольная матрица. При этом матрица \( B \in M_{n \times n}(\mathbb{R}) \) получается путём сдвига всех столбцов матрицы \( A \) по циклу на 2 вправо (т. е. 1-й столбец становится на место 3-го, 2-й — на место 4-го, \( n \)-й на место 2-го) и прибавлением результата к \( A \). Вырази определитель \( B \) через определитель \( A \).
+ 
+\textbf{Решение:}
+
+\vspace{1cm}
+
+\subsection{Задача 11}
+
+\textbf{Условие задачи:}
+
+Докажи, что если ко всем элементам квадратной матрицы \( A \) прибавить одно и то же число, то сумма алгебраических дополнений для любой строки не изменится.
+
+\textbf{Решение:}
+
+\[
+B = A + AP = A(I + P)
+\]
+
+\[
+\det(B) = \det(A) \cdot \det(I + P)
+\]
+
+\[
+\det(M'_{ij}) = \det(M_{ij} + cJ') = \det(M_{ij}) + c \cdot \sum_{k=1}^{n-1} C_{k}
+\]
+
+\[
+\sum_{j=1}^n C'_{ij} = \sum_{j=1}^n (-1)^{i+j} \det(M'_{ij}) = \sum_{j=1}^n (-1)^{i+j} \det(M_{ij})
+\]
+Так как \( \det(M'_{ij}) = \det(M_{ij}) \), получаем:
+\[
+\sum_{j=1}^n C'_{ij} = \sum_{j=1}^n C_{ij}
+\]
+
+\vspace{1cm}
+
+\subsection{Задача 12}
+
+\textbf{Условие задачи:}
+
+Пусть \( X = (X_1 \mid \dots \mid X_n) \in M_{n \times n}(\mathbb{R}) \) и \( \lambda_1, \dots, \lambda_n \in \mathbb{R} \). Найди
+
+\[
+\det(\lambda_1 X_1 X_1^T + \dots + \lambda_n X_n X_n^T)
+\]
+
+\textbf{Замечание:}
+
+В задаче можно взять матрицу \( X \in M_{n \times k}(\mathbb{R}) \) с любым количеством столбцов и явно посчитать определитель. Если сначала решить задачу для \( k = n \), то для варианта \( k < n \) ответ получить несложно. Случай \( k > n \) чуть сложнее и требует дополнительных рассуждений. Попробуй самостоятельно разобрать его.
+
+\textbf{Решение:}
+\[
+A = \sum_{i=1}^{n}\lambda_i X_i X_i^T = X \Lambda X^T
+\]
+
+\[
+\det(A) = (\det(X))^2) \cdot \prod_{i=i}^{n} \lambda_i
+\]
+\begin{enumerate}
+    \item k = n, формула написано выше 
+    \item k < n: определитель = 0
+    \item k > n: Если столбцы линейно зависимы, то определитель = 0, если линейно независимы, то определитель = 0, т.к матрица имеет ранг не больше n а размерность совпадает с n
+
+\[
+\det\left( \sum_{i=1}^k \lambda_i X_i X_i^T \right) =
+\begin{cases}
+(\det X)^2 \cdot \prod_{i=1}^n \lambda_i, & \text{если } k = n \text{ и } X \text{ невырождена}, \\
+0, & \text{иначе}.
+\end{cases}
+\]
+\end{enumerate}
+\vspace{1cm}
+
+\subsection{Задача 13}
+
+\textbf{Условие задачи:}
+
+Выполни задания:
+
+\begin{enumerate}
+    \item Пусть \( A, B \in M_{n \times n}(\mathbb{R}) \). Докажи, что равенство характеристических многочленов \( \chi_{AB}(t) = \chi_{BA}(t) \) выполняется при условии, что одна из матриц \( A \) или \( B \) обратима.
+    \item Докажи равенство \( \chi_{AB}(t) = \chi_{BA}(t) \) в общем случае. \textit{Указание:} используй принцип продолжения по непрерывности.
+    \item Пусть \( A \in M_{m \times n}(\mathbb{R}) \) и \( B \in M_{n \times m}(\mathbb{R}) \), причём \( n > m \). Покажи, что
+
+    \[
+    \lambda^{n - m} \chi_{AB}(\lambda) = \chi_{BA}(\lambda)
+    \]
+\end{enumerate}
+
+\textbf{Решение:}
+\begin{enumerate}
+    \item   Пусть А обратима, тогда $BA = A^{-1}(AB)A$
+            $\chi_{BA}(t) = \det(tI-A^{-1}(AB)A)=\det(A^{-1}tA-A^{-1}(AB)A)=\det(A^{-1}(tI-AB)A)$\\
+            
+            $\chi_{BA}(t)=\det(A^{-1})\cdot \det(tI-AB)\cdot \det(A)=\det(tI-AB)$
+            $\chi_{AB}(t) = \chi_{BA}(t)$
+    \item   \begin{enumerate}
+                \item Обратимые матрицы находятся в множестве всех матриц.
+                \item Любую произвольную матрицу можно приблизить последовательностью обратимых матриц
+                \item Характеристический многочлен зависит от элементов матрицы AB
+                \item Точно также характерисический многочлен зависит и от матрицы BA
+                \item Существует последовательность матриц $A_k, B_k$ которые сходятся к A и B соответственно
+                \item Поскольку характеристические многочлены непрерывны, то $\chi_{AB}(t)=\lim_{k \to \infty} \chi_{B_k A_k}(t) = \chi_{BA}(t)$
+            \end{enumerate}
+    \item   \begin{enumerate}
+                \item AB имеет размерность m x m, BA n x n , поскольку ранг матрицы BA не превосходит m, то матрица BA имеет по крайней мере n-m нулевых собвственных значений, кроме того, собственные значения матриц совпадают, поэтому $\lambda^{n - m}\chi_{AB}(\lambda) = \chi_{BA}(\lambda)$
+            \end{enumerate}
+\end{enumerate}
+
+\vspace{1cm}
+
+\subsection{Задача 14}
+
+\textbf{Условие задачи:}
+
+Пусть \( A \in M_{n \times n}(\mathbb{R}) \), \( A^b \) — её присоединённая матрица. Докажи пункты ниже.
+
+\begin{enumerate}
+    \item \( \det(A^b) = \det(A)^{n - 1} \).
+    \item \( A^{bb} = \det(A)^{n - 2} A \) при \( n \geq 2 \).
+    \item Для квадратных матриц \( A, B \in M_{n \times n}(\mathbb{R}) \) покажи, что \( (AB)^d = B^d A^d \).
+\end{enumerate}
+
+\textit{Указание:} приведи рассуждения для обратимой матрицы \( A \) и выведи общий случай, используя принцип продолжения по непрерывности.
+
+\textbf{Решение:}
+
+\begin{enumerate}
+    \item   \begin{enumerate}
+                \item $A\cdot adj(A)=det(A)I$
+                \item $A^{-1}=\det(A)^{-1}\cdot adj(A)$
+                \item $det(adj(A))=det(det(A)A^{-1})=det(A)^n\cdot det(A)^{-1}=det(A)^{n-1}$
+            \end{enumerate}
+    \item   \begin{enumerate}
+                \item $adj(adj(A))=det(adj(A))adj(A)^{-1}=det(A)^{n-1}(det(A)A^{-1})^{-1}=det(A)^{n-2}A$
+                \item т.к обе части равенства являются многочленами от матрицы А, и равенство верно для обратимых матриц, то оно верно для всех $A \in M_n(R)$ при $n \ge 2$
+                \item $adj(adj(A))=det(A)^{n-2}A$
+            \end{enumerate}
+    \item   \begin{enumerate}
+                \item $adj(B)adj(A)=(det(B)B^{-1})(det(A)A^{-1})=det(A)det(B)B^{-1}A^{-1}=det(AB)(AB)^{-1}=adj(AB)$
+                \item т.к равенство выполняется для обратимых матриц, которые принадлежат $M_n(R)$ то оно верно для всех матриц $A,B\in M_n(\mathbb{R})$
+                \item $adj(B)adj(A)=adj(AB)$
+            \end{enumerate}
+\end{enumerate}
+
+\vspace{1cm}
+
+\end{document}

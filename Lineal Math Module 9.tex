@@ -1,0 +1,1067 @@
+\documentclass[a4paper,12pt]{article}
+
+% Кодировка и язык
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% Математические пакеты
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Графика
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+
+% Геометрия страницы
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% Гиперссылки
+\usepackage{hyperref}
+
+% Плавающие объекты
+\usepackage{float}
+
+% Дополнительные пакеты
+\usepackage{venndiagram}
+
+% Настройки заголовка
+\title{Домашнее задание}
+\author{Студент: \textbf{Ростислав Лохов}}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Линейная Алгебра}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Ростислав Лохов}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Задачи: Домашнее задание}
+
+\subsection{ЗАДАЧА 1 \hfill \textbf{(2 балла)}}
+\textbf{Условие задачи:}
+
+Для подпространств \( U, V \subseteq \mathbb{R}^3 \) найдите базис их суммы и пересечения, если
+\[
+V = \text{span} \left\{
+\begin{pmatrix}
+1 \\
+2 \\
+1
+\end{pmatrix},
+\begin{pmatrix}
+1 \\
+1 \\
+-1
+\end{pmatrix},
+\begin{pmatrix}
+1 \\
+3 \\
+3
+\end{pmatrix}
+\right\},
+\]
+\[
+U = \text{span} \left\{
+\begin{pmatrix}
+1 \\
+2 \\
+2
+\end{pmatrix},
+\begin{pmatrix}
+2 \\
+3 \\
+-1
+\end{pmatrix},
+\begin{pmatrix}
+1 \\
+1 \\
+-3
+\end{pmatrix}
+\right\}.
+\]
+
+\textbf{Решение:}
+
+найдем базис для подпространства V:
+
+\[
+\begin{pmatrix}
+    1 & 2 & 1 \\
+    1 & 1 & -1 \\
+    1 & 3 & 3 \\
+\end{pmatrix}
+\]
+
+Несложно заметить, что третья строка является линейной комбинацией первой и второй строки причем ранг матрицы - 2. тогда базисом будет:
+
+V = \[
+\begin{pmatrix}
+    1 \\
+    2 \\
+    1 \\
+\end{pmatrix}, 
+\begin{pmatrix}
+    1 \\ 
+    1 \\
+    -1\\
+\end{pmatrix}
+\]
+
+Найдём базис для пространства U:
+
+\[
+\begin{pmatrix}
+    1 & 2 & 2 \\
+    2 & 3 & -1 \\
+    1 & 1 & -3\\
+\end{pmatrix}
+\]
+
+третья строка является линейной комбинацией первой и второй строки, ранг матрицы равен двум, тогда
+
+U = 
+\[
+\begin{pmatrix}
+    1 \\
+    2 \\
+    2 \\
+\end{pmatrix}, 
+\begin{pmatrix}
+    2 \\
+    3 \\ 
+    -1 \\
+\end{pmatrix}
+\]
+
+тогда суммой будут являтся :
+
+U + V = \[
+\begin{pmatrix}
+    1 \\
+    2 \\
+    2 \\
+\end{pmatrix}, 
+\begin{pmatrix}
+    2 \\
+    3 \\ 
+    -1 \\
+\end{pmatrix}
+\begin{pmatrix}
+    1 \\ 
+    1 \\
+    -1\\
+\end{pmatrix}
+\]
+вектор 1 2 1 будет линейно зависим от других
+
+рассмотрим пресечение пространств, т.е нам нужно найти такую линейную комбинацию совпадения базисов:
+
+\[
+a \begin{pmatrix}1 \\ 2 \\ 2\end{pmatrix} + b \begin{pmatrix}2 \\ 3 \\ -1\end{pmatrix} = c \begin{pmatrix}1 \\ 2 \\ 1\end{pmatrix} + d \begin{pmatrix}1 \\ 1 \\ -1\end{pmatrix}
+\]
+
+\[
+\begin{pmatrix}
+    1& 2& -1& -1 \\
+    2& 3& -2& -1 \\
+    2& -1& -1& 1\\
+\end{pmatrix} \cdot \begin{pmatrix}
+    a \\
+    b \\
+    c \\
+    d \\
+\end{pmatrix} = 0 \Rightarrow \begin{pmatrix}
+    a \\
+    b \\
+    c \\
+    d \\
+\end{pmatrix} = a\cdot
+\begin{pmatrix}
+    1 \\
+    1 \\
+    2 \\
+    1
+\end{pmatrix}
+\]
+
+т.е один вектор.
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 2 \hfill \textbf{(2 балла)}}
+\textbf{Условие задачи:}
+
+Для подпространств \( U, V \subseteq \mathbb{R}^4 \) найдите базис их суммы и пересечения, если
+\[
+V = \text{span} \left\{
+\begin{pmatrix}
+2 \\
+1 \\
+4 \\
+1
+\end{pmatrix},
+\begin{pmatrix}
+-2 \\
+-3 \\
+3 \\
+3
+\end{pmatrix}
+\right\},
+\]
+\[
+U = \left\{ y \in \mathbb{R}^4 \mid
+\begin{pmatrix}
+0 & 2 & 1 & 1 \\
+3 & 1 & 2 & 1
+\end{pmatrix}
+y = 0
+\right\}.
+\]
+
+\textbf{Решение:}
+
+% Здесь вставьте решение задачи
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 3 \hfill \textbf{(1,5 балла)}}
+\textbf{Условие задачи:}
+
+Проверьте, лежит ли подпространство \( U \) внутри подпространства \( W \):
+
+1. \( U = \text{span} \left\{
+\begin{pmatrix}
+3 \\
+1 \\
+-3
+\end{pmatrix},
+\begin{pmatrix}
+1 \\
+-2 \\
+3
+\end{pmatrix}
+\right\} \),
+\( W = \text{span} \left\{
+\begin{pmatrix}
+2 \\
+3 \\
+-6
+\end{pmatrix},
+\begin{pmatrix}
+1 \\
+5 \\
+-9
+\end{pmatrix}
+\right\} \);
+
+2. \( U = \text{span} \left\{
+\begin{pmatrix}
+-1 \\
+2 \\
+1
+\end{pmatrix},
+\begin{pmatrix}
+-3 \\
+3 \\
+1
+\end{pmatrix}
+\right\} \),
+\( W = \left\{ y \in \mathbb{R}^3 \mid
+\begin{pmatrix}
+-3 & -6 & 9 \\
+2 & 4 & -6
+\end{pmatrix}
+y = 0
+\right\} \);
+
+3. \( U = \left\{ y \in \mathbb{R}^3 \mid
+\begin{pmatrix}
+-1 & 2 & 3 \\
+2 & 3 & 1
+\end{pmatrix}
+y = 0
+\right\} \),
+\( W = \left\{ y \in \mathbb{R}^3 \mid
+\begin{pmatrix}
+3 & 1 & -2 \\
+5 & 4 & -1
+\end{pmatrix}
+y = 0
+\right\} \).
+
+\textbf{Решение:}
+
+% Здесь вставьте решение задачи
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 4 \hfill \textbf{(2,5 балла)}}
+\textbf{Условие задачи:}
+
+Пусть матрица \( A \in M_{3 \times 3}(\mathbb{R}) \) задана следующим образом:
+\[
+A =
+\begin{pmatrix}
+2 & 4 & -2 \\
+-4 & -5 & 1 \\
+-4 & 1 & -9
+\end{pmatrix}.
+\]
+1. Найдите \( LU \)-разложение для \( A \), в котором \( L \) — нижнетреугольная с 1 на диагонали, а \( U \) — верхнетреугольная.
+2. Найдите \( LU \)-разложение для \( A \), в котором \( L \) — нижнетреугольная, а \( U \) — верхнетреугольная с 1 на диагонали.
+3. Найдите обратные матрицы к \( L \) и \( U \) из первого пункта.
+4. Найдите \( A^{-1} \), используя обратные к \( L \) и \( U \) из первого пункта.
+5. Решите систему \( Ax = B \), используя \( LU \)-разложение, где
+\[
+B =
+\begin{pmatrix}
+-2 & 2 \\
+2 & 1 \\
+3 & 3
+\end{pmatrix}.
+\]
+
+\textbf{Решение:}
+
+\[
+\begin{pmatrix}
+    1& 0& 0 \\
+    2& 1& 0 \\
+    2& 0& 1 \\
+\end{pmatrix}^{-1} \cdot 
+\begin{pmatrix}
+    0.5& 0& 0 \\
+    0& \frac{1}{3}& 0 \\
+    0& 0& 1 \\ 
+\end{pmatrix}^{-1} \cdot 
+\begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & -9 & 1 \\
+\end{pmatrix}^{-1} \cdot
+\begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & -0.25 \\
+\end{pmatrix}^{-1} \cdot\begin{pmatrix}
+    1& 2& -1 \\
+    0& 1& -1 \\
+    0& 0& 1 \\
+\end{pmatrix}= A
+\]
+
+\[
+L'U' = A \Longleftrightarrow
+\begin{pmatrix}
+    2 & 0 & 0 \\
+    -4 & 3 & 0 \\
+    -4 & 9 & -4 \\
+\end{pmatrix} \cdot \begin{pmatrix}
+    1& 2& -1 \\
+    0& 1& -1 \\
+    0& 0& 1 \\
+\end{pmatrix} = A
+\]
+
+Можно поменять, достаточно домножить на матрицу состоящую из неединичной из разложения, получаем для смены единиц: $L=L'\cdot D^{-1}\land U = D U'$
+ Тогда 
+\[
+  L \cdot U = \begin{pmatrix}
+   1 & 0 & 0 \\
+   -2 & 1 & 0 \\
+   -1 & 3 & 1 \\
+   \end{pmatrix}
+   \cdot
+   \begin{pmatrix}
+   2 & 4 & -2 \\
+   0 & 3 & -3 \\
+   0 & 0 & -4 \\
+   \end{pmatrix} = A
+\]
+
+\[
+L^{-1} = 
+\begin{pmatrix} 
+    1 & 0 & 0\\
+    2 & 1 & 0 \\
+    -5 & -3 & 1 \\
+\end{pmatrix} \land
+U^{-1} = \begin{pmatrix}
+\frac{1}{2} & -\frac{2}{3} & \frac{1}{4} \\
+0 & \frac{1}{3} & -\frac{1}{4} \\
+0 & 0 & -\frac{1}{4} \\
+\end{pmatrix}
+\]
+
+\[
+A^{-1} = U^{-1}L^{-1} = \begin{pmatrix}
+-\frac{11}{6} & -\frac{17}{12} & \frac{1}{4} \\
+\frac{23}{12} & \frac{13}{12} & -\frac{1}{4} \\
+\frac{5}{4} & \frac{3}{4} & -\frac{1}{4} \\
+\end{pmatrix}
+\]
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 5 \hfill \textbf{(2 балла)}}
+\textbf{Условие задачи:}
+
+Для оператора \( \varphi: \mathbb{R}^4 \to \mathbb{R}^4 \), заданного матрицей
+\[
+A =
+\begin{pmatrix}
+4 & -3 & 3 & -1 \\
+2 & -3 & 3 & 1 \\
+-1 & -2 & 2 & 3 \\
+4 & -3 & 3 & -1
+\end{pmatrix},
+\]
+найдите базис пересечения \( \text{Im} \varphi \cap \ker \varphi \) и суммы \( \text{Im} \varphi + \ker \varphi \).
+
+\textbf{Решение:}
+Окей, рассмотрим линейно независимые от других столбцы и строки одновременно, по матрице видно, что строка 3 зависит от строки 2, с коэффициентом -1, видно, что строка 2 выражается, через строку 1 и 4, тогда лн строки - 1 и 4. Что касается столбцов, то столбцец 2 эквивалентен столбцу 3, и столбец 4 выражается как линейная комбинация 1 и 2
+
+\[
+A = \begin{pmatrix}
+    4 & -3 \\
+    2 & -3 \\
+    -1 & -2 \\
+    4 & -3 \\
+\end{pmatrix} \land
+
+A = \begin{pmatrix}
+    4 & 2 & -1 & 4 \\
+    -1 & 1 & 3 & -1\\
+\end{pmatrix}
+\]
+
+\[
+Ax = 0 \leftrightarrow
+\begin{pmatrix}
+    1& 0& 0& -1 \\
+    0& 1& -1& -1 \\
+    0& 0& 0& 0\\
+    0& 0& 0& 0\\
+\end{pmatrix} x = 0 \Rightarrow x_1 = x_4 \land x_2 = x_3 + x_4  \land x_3 = x_3 \land x_4 = x_4\Rightarrow
+    X = x_3\begin{pmatrix}
+        0 \\ 1 \\ 1 \\ 0
+    \end{pmatrix} + x_4 \begin{pmatrix}
+        1 \\ 1 \\ 0 \\ 1
+    \end{pmatrix}
+\]
+
+\[
+Im = span\left(\begin{pmatrix}
+    4\\
+    2\\
+    -1\\
+    4\\
+\end{pmatrix}, \begin{pmatrix}
+    -3 \\
+    -3 \\
+    -2 \\
+    -3 \\
+\end{pmatrix}\right)
+\]
+
+\[
+Im(\varphi) \cap ker(\varphi) \leftrightarrow a\begin{pmatrix}
+    4\\
+    2\\
+    -1\\
+    4\\
+\end{pmatrix} + b\begin{pmatrix}
+    -3 \\
+    -3 \\
+    -2 \\
+    -3 \\
+\end{pmatrix} = c \begin{pmatrix}
+        0 \\ 1 \\ 1 \\ 0
+    \end{pmatrix} + d \begin{pmatrix}
+        1 \\ 1 \\ 0 \\ 1
+    \end{pmatrix} \Rightarrow 
+\]
+
+к улучшеному ступенчатому виду:
+
+\[
+\begin{pmatrix}
+    1 & 0 & 0& -0.4 \\
+    0 & 1 & 0& -0.2 \\
+    0 & 0 & 1& 0.8 \\
+    0 & 0 & 0 & 0  \\
+\end{pmatrix}\
+x_1 = 0.4x_4 \land x_2 = 0.2x_4 \land x_3 = -0.8 x_4 \land x_4 = x_4 \Longleftrightarrow
+X = x_4\begin{pmatrix}
+    0.4 \\
+    0.2 \\
+    -0.8 \\
+    1
+\end{pmatrix}
+\]
+
+\[
+Im(\varphi) + Ker(\varphi) = \left(\begin{pmatrix}
+    4\\
+    2\\
+    -1\\
+    4\\
+\end{pmatrix}, \begin{pmatrix}
+    -3 \\
+    -3 \\
+    -2 \\
+    -3 \\
+\end{pmatrix},\begin{pmatrix}
+        1 \\ 1 \\ 0 \\ 1
+    \end{pmatrix} \right)
+\]
+
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 6 \hfill \textbf{(1,5 балла)}}
+\textbf{Условие задачи:}
+
+Пусть заданы линейные отображения \( \varphi \) и \( \psi \):
+\[
+\varphi: \mathbb{R}^2 \to \mathbb{R}^4, \quad \varphi(x) = Ax, \quad \text{где}
+\]
+\[
+A =
+\begin{pmatrix}
+-3 & -5 \\
+1 & 4 \\
+3 & 4 \\
+-1 & 1
+\end{pmatrix},
+\]
+\[
+\psi: \mathbb{R}[x]_{\leq 2} \to \mathbb{R}^4, \quad \psi(f) =
+\begin{pmatrix}
+2f(0) - 2f'(0) - 4f(1) \\
+-3f(0) + 3f'(0) + 6f(1) \\
+7f(0) - 3f'(0) - 2f(1) \\
+-2f(0) + 2f'(0) + 4f(1)
+\end{pmatrix}.
+\]
+Найдите матрицу линейного оператора \( \phi: \mathbb{R}^4 \to \mathbb{R}^4 \), такого, что \( \text{Im} \phi = \text{Im} \varphi + \text{Im} \psi \). Матрицу нужно записать в стандартном базисе.
+
+\textbf{Решение:}
+\[
+\psi = \{1, x, x^2\}
+\]
+
+$e_1: f(0) = 1, f'(0)=0, f(1) = 1$
+
+$e_2: f(0)=0, f'(0)=1, f(1) = 1$
+
+$e_3: f(0) = 0, f'(0)=0, f(1)=1$
+
+\[
+B = \left(\begin{pmatrix}
+    -2 \\ 3 \\ 5 \\ 2
+\end{pmatrix}, \begin{pmatrix}
+    -6 \\ 9 \\ -5 \\ 6
+\end{pmatrix}, \begin{pmatrix}
+    -4 \\ 6 \\ -2 \\ 4
+\end{pmatrix} \right)
+\]
+
+Видно, что третий вектор образован от первых двух, т.е сумма 1/5 на вектор 1 + 3/5 на вектор 2
+
+\[
+B = \left(\begin{pmatrix}
+    -2 \\ 3 \\ 5 \\ 2
+\end{pmatrix}, \begin{pmatrix}
+    -6 \\ 9 \\ -5 \\ 6
+\end{pmatrix}\right)
+\]
+
+\[
+M = Im(\phi) + Im(\psi)  = \begin{pmatrix}
+    -3& -5& -2& -6 \\
+    1& 4& 3& 9 \\
+    3& 4& 5& -5 \\
+    -1& 1& 2& 6 \\
+\end{pmatrix}
+\]
+Видно, что четвертый столбец, образован от линейной комбинации трех остальных( -5 * 1 вектор + 5 * второй вектор - 2 * третий вектор) Таким образом:
+
+\[
+M = Im(\phi) + Im(\psi)  = \begin{pmatrix}
+    -3& -5& -2 \\
+    1& 4& 3 \\
+    3& 4& 5 \\
+    -1& 1& 2 \\
+\end{pmatrix}
+\]
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 7 \hfill \textbf{(2 балла)}}
+\textbf{Условие задачи:}
+
+Пусть заданы два линейных отображения \( \varphi: \mathbb{R}^4 \to \mathbb{R}^2 \) и \( \psi: \mathbb{R}^4 \to \mathbb{R}^2 \) по правилам
+\[
+\varphi(x) = Ax \quad \text{и} \quad \psi(x) = Bx,
+\]
+где
+\[
+A =
+\begin{pmatrix}
+1 & 2 & -2 & -1 \\
+1 & -1 & -2 & 2
+\end{pmatrix},
+\quad
+B =
+\begin{pmatrix}
+-3 & -2 & 3 & 2
+\end{pmatrix}.
+\]
+Найдите матрицу какого-нибудь линейного оператора \( \phi: \mathbb{R}^4 \to \mathbb{R}^4 \) в стандартном базисе, такого, что \( \ker \varphi \cap \ker \psi = \ker \phi \).
+
+\textbf{Решение:}
+
+\[
+A = \begin{pmatrix}
+    1 & 2 & -2 & -1 \\
+    0 & 1 & 0 & -1 \\
+\end{pmatrix}
+x_1 = -x_4 + 2x_3  \land x_2 = x_4 \land x_3 = x_3 \land x_4 = x_4
+X = x_4\begin{pmatrix}
+    -1 \\ 1 \\ 0 \\1
+\end{pmatrix} + x_3 \begin{pmatrix}
+    2 \\ 0 \\ 1 \\ 0
+\end{pmatrix}
+\]
+
+\[
+\ker(\phi) = \left( 
+    \begin{pmatrix}
+        -1 \\ 
+        1 \\ 
+        0 \\ 
+        1
+    \end{pmatrix}, 
+    \begin{pmatrix}
+        2 \\ 
+        0 \\ 
+        1 \\ 
+        0
+    \end{pmatrix} 
+\right) \land \ker(\psi) = \left( 
+    \begin{pmatrix} 
+        -\dfrac{2}{3} \\ 
+        1 \\ 
+        0 \\ 
+        0 
+    \end{pmatrix}, 
+    \begin{pmatrix} 
+        1 \\ 
+        0 \\ 
+        1 \\ 
+        0 
+    \end{pmatrix}, 
+    \begin{pmatrix} 
+        \dfrac{2}{3} \\ 
+        0 \\ 
+        0 \\ 
+        1 
+    \end{pmatrix} 
+\right)
+\]
+
+Подставляем, в матрицу перехода B ядро получаем
+
+\[
+ker(\phi) \cap ker(\psi) = span(\begin{pmatrix}
+    1 \\
+    1 \\
+    1 \\
+    1 \\
+\end{pmatrix})
+\]
+
+теперь нам нужно найти матрицу ядром которой будет это пересчение. Допустим
+
+\[
+\phi =
+\begin{pmatrix}
+1 & -1 & 0 & 0 \\
+1 & 0 & -1 & 0 \\
+1 & 0 & 0 & -1 \\
+0 & 0 & 0 & 0 \\
+\end{pmatrix}.
+\]
+
+очевидно, что ядром такой матрицы будет единичный вектор.
+
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 8 \hfill \textbf{(3 балла)}}
+\textbf{Условие задачи:}
+
+В пространстве \( V = \mathbb{R}^3 \) заданы два линейных оператора \( \varphi, \psi: V \to V \). Известно, что оператор \( \varphi \) в базисе \( g_1, g_2, g_3 \) задан матрицей \( A \), где
+\[
+g_1 =
+\begin{pmatrix}
+-1 \\
+1 \\
+-2
+\end{pmatrix},
+\quad
+g_2 =
+\begin{pmatrix}
+2 \\
+-1 \\
+3
+\end{pmatrix},
+\quad
+g_3 =
+\begin{pmatrix}
+-1 \\
+-1 \\
+-1
+\end{pmatrix},
+\]
+\[
+A =
+\begin{pmatrix}
+-1 & 3 & -4 \\
+-1 & 3 & -4 \\
+-2 & 3 & -2
+\end{pmatrix}.
+\]
+Оператор \( \psi \) в базисе \( f_1, f_2, f_3 \) задан матрицей \( B \), где
+\[
+f_1 =
+\begin{pmatrix}
+1 \\
+-2 \\
+2
+\end{pmatrix},
+\quad
+f_2 =
+\begin{pmatrix}
+-2 \\
+3 \\
+-2
+\end{pmatrix},
+\quad
+f_3 =
+\begin{pmatrix}
+2 \\
+-2 \\
+1
+\end{pmatrix},
+\]
+\[
+B =
+\begin{pmatrix}
+1 & 7 & -9 \\
+3 & 6 & -9 \\
+3 & 1 & -3
+\end{pmatrix}.
+\]
+Найдите:
+1. Матрицу оператора \( \varphi \circ \psi \) в стандартном базисе.
+2. Базис пространства \( \ker \varphi + \ker \psi \).
+3. Базис пространства \( \text{Im} \varphi \cap \text{Im} \psi \).
+
+\textbf{Решение:}
+Для того чтобы найти стадартный базис, достаточно сделать произведение базиса на матрицу на обратный базис, т.е:
+
+\[
+GAG^{-1} = \begin{pmatrix}
+    2 & 1 & -1 \\
+    1 & -1 & -2 \\
+    2 & 1 & -1 \\
+\end{pmatrix}
+\]
+
+\[
+FBF^{-1} = \begin{pmatrix}
+    1 & -1 & -1 \\
+    -1 & 2 & 3 \\
+    -1 & 1 & 1 \\
+\end{pmatrix}
+\]
+
+\[
+GAG^{-1} \cdot FBF^{-1} = \begin{pmatrix}
+    2 & -1& 0 \\
+    4 & -5& -6 \\
+    2 & -1& 0 \\
+\end{pmatrix}
+\]
+
+\[
+ker(\phi) = \begin{pmatrix}
+    1 & 0.5 & -0.5 \\
+    0 & -1/5 & -1.5 \\
+\end{pmatrix} \Leftarrow x_1 = x_3 \land x_2 = -x_3 \land x_3 = x_3 \Leftarrow X = x_3 \begin{pmatrix}
+    1 \\ -1 \\ 1
+\end{pmatrix}
+\]
+
+\[
+ker(\psi) = \begin{pmatrix}
+    -1 \\ -2 \\ 1
+\end{pmatrix}
+\]
+
+\[
+ker(\psi) + ker(\phi) = \left\{\, (1,\ -1,\ 1),\ (-1,\ -2,\ 1) \,\right\}
+\]
+
+\[
+ker(\psi) \cap ker(\phi) = (0, 3, 0)
+\]
+
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 9 \hfill \textbf{(1 балл)}}
+\textbf{Условие задачи:}
+
+В пространстве \( \mathbb{R}^4 \) задана билинейная форма \( \beta: \mathbb{R}^4 \times \mathbb{R}^4 \to \mathbb{R} \) по правилу
+\[
+(x, y) \mapsto x^T By,
+\]
+где
+\[
+B =
+\begin{pmatrix}
+0 & 1 & -1 & 0 \\
+1 & -3 & 1 & -1 \\
+-1 & 1 & 5 & 4 \\
+0 & -1 & 4 & 2
+\end{pmatrix}.
+\]
+И пусть
+\[
+U = \text{span} \left\{
+\begin{pmatrix}
+3 \\
+4 \\
+1 \\
+-3
+\end{pmatrix},
+\begin{pmatrix}
+3 \\
+5 \\
+1 \\
+-4
+\end{pmatrix}
+\right\}.
+\]
+Найдите базис \( U \cap U^{\perp} \) и \( U + U^{\perp} \).
+
+\textbf{Решение:}
+
+\[
+\beta(u_1, y) = u_1^TBy = 3y_1 -5y_2 -6y_3 -6y_4 = 0 
+\]
+\[
+\beta(u_2, y) = u_2^TBy = 4y_1 -7y_2 -9y_3 -9y_4 = 0
+\]
+
+
+\[
+U^{\perp} = \text{span} \left( \begin{pmatrix}
+    -3 \\ -3 \\ 1 \\ 0
+\end{pmatrix}, \begin{pmatrix}
+    -3 \\ -3 \\ 0 \\ 1
+\end{pmatrix} \right)
+\]
+\[
+U \cap U^{\perp} = \left( \begin{pmatrix}
+    -3 \\ -3 \\ -1 \\ 2
+\end{pmatrix} \right)
+\]
+
+ \[ U + U^{\perp} =
+   \left\{ 
+   \begin{pmatrix} -3 \\ -3 \\ -1 \\ 2 \end{pmatrix}, 
+   \begin{pmatrix} 3 \\ 4 \\ 1 \\ -3 \end{pmatrix}, 
+   \begin{pmatrix} -3 \\ -3 \\ 1 \\ 0 \end{pmatrix} 
+   \right\}
+   \]
+
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 10 \hfill \textbf{(2 балла)}}
+\textbf{Условие задачи:}
+
+Пусть
+\[
+\varphi: \mathbb{R}[x]_{\leq 3} \to \mathbb{R}^2, \quad \varphi(f) =
+\begin{pmatrix}
+f(1) \\
+f''(0)
+\end{pmatrix},
+\]
+и
+\[
+\psi: \mathbb{R}[x]_{\leq 2} \to \mathbb{R}[x]_{\leq 3}, \quad \psi(f) = \int_0^x f(t) \, dt.
+\]
+Найдите базис \( \text{Im} \psi \cap \ker \varphi \).
+
+\textbf{Решение:}
+
+\[
+Im(\psi) = \left[Ax^3 + Bx^2 + Cx | A, B, C \in \mathbb{R}\right]
+\]
+
+\[
+ker(\phi) = \begin{cases}
+    A + B + C = 0 \\
+    2B = 0
+\end{cases}
+\]
+
+\[
+ker(\phi) \cap Im(\psi) = A(x^3-x)
+\]
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 11 \hfill \textbf{(2 балла)}}
+\textbf{Условие задачи:}
+
+Рассмотрим векторное пространство последовательностей
+\[
+V = \left\{ (a_0, a_1, \dots, a_n, \dots) \mid a_i \in \mathbb{R}, \, a_n = a_{n-1} + a_{n-2} + \dots + a_{n-100} \ \forall n \geq 100 \right\}.
+\]
+Зададим в нём следующие два подпространства:
+\[
+U = \left\{ (a_0, a_1, \dots, a_n, \dots) \in V \mid a_{100} = a_{101} \right\},
+\]
+\[
+W = \left\{ (a_0, a_1, \dots, a_n, \dots) \in V \mid a_{200} = 0 \right\}.
+\]
+Найдите размерности \( U \cap W \) и \( U + W \).
+
+\textbf{Решение:}
+
+Очевидно, что V имеет размерность 100.  Рассмотрим пространство U : $a_{101} = a_{100}...+a_1 = 2a_{99} + ... + 2a_1 + a_0$  Тогда при условии $a_{100} = a_{101}$  приводит к тому, что $a_0 + ... + a_{99} = a_0 + 2a_1 + ... + 2a_{99} \Rightarrow a_1 + ... a_{99} = 0$ Следовательно размерность 99
+
+Теперь рассмотрим W, его размерность также будет 99, т.к $a_{200}=0$ является одним линейным уравнением на начальных 100 элементах. 
+
+Тогда размерностью пересечения этих двух пространств будте 100 - 2 = 98 т.к оба условия являются линейными и независимыми. Тогда сумма будет являтся разностью суммы размерностей двух пространств и размерности пересечений, т.е 99 + 99 - 98  = 100. Таким образом сумма этих подпространств даёт V
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 12 \hfill \textbf{(2 балла)}}
+\textbf{Условие задачи:}
+
+В пространстве \( \mathbb{R}^4 \) задана симметричная билинейная форма \( \beta: \mathbb{R}^4 \times \mathbb{R}^4 \to \mathbb{R} \) по правилу
+\[
+(x, y) \mapsto x^T By,
+\]
+где
+\[
+B =
+\begin{pmatrix}
+8 & -5 & 3 & -2 \\
+-5 & 3 & -3 & 2 \\
+3 & -3 & -9 & 6 \\
+-2 & 2 & 6 & -4
+\end{pmatrix}.
+\]
+Для оператора \( \varphi: \mathbb{R}^4 \to \mathbb{R}^4 \) определим форму \( \beta_\varphi \) по правилу
+\[
+\beta_\varphi(x, y) = \beta(\varphi(x), \varphi(y)).
+\]
+Определите максимальную размерность подпространства \( \ker \beta + \ker \beta_\varphi \) для всех возможных обратимых операторов \( \varphi: \mathbb{R}^4 \to \mathbb{R}^4 \).
+
+\textbf{Решение:}
+
+Найдем размерность ядра. Для начала решим Bx = 0. Получим после приведения к ступенчатому виду:
+
+\[
+\begin{pmatrix}
+    1& 0 &6& -4 \\
+    0 &1 &9& -6 \\
+    0& 0 &0 &0 \\
+    0 &0& 0 &0
+\end{pmatrix}
+\] т.е размерность ядра будет 2. По свойству обратного оператора, он сохраняет размерность пространства оператора. Тогда $U = ker(\beta) \land V = ker(\beta_\phi) \Rightarrow dim(U+V) = dim(U) + dim(V) - dim(U\cap V) $ в таком случае зная первые два слагаемых для максимизации стоит уменьшить размерность пространства пересечений. Наилучшим образом это будет достигаться в нулевом векторе. Тогда размерность суммы подпространств будет равна 4. т.е $dim(U + V) = 4$
+
+\vspace{1cm}
+
+\subsection{ЗАДАЧА 13 \hfill \textbf{(2 балла)}}
+\textbf{Условие задачи:}
+
+Пусть в \( \mathbb{R}^4 \) задан вектор \( v \), а линейные операторы \( \varphi \) и \( \psi \) заданы матрицами \( A \) и \( A^T \):
+\[
+A =
+\begin{pmatrix}
+4 & 4 & -5 & -10 \\
+-2 & -2 & 4 & 7 \\
+0 & 0 & 4 & 4 \\
+0 & 0 & -2 & -2
+\end{pmatrix},
+\quad
+v =
+\begin{pmatrix}
+-6 \\
+4 \\
+-5 \\
+6
+\end{pmatrix}.
+\]
+Выясните, верно ли, что
+\[
+\mathbb{R}^4 = \text{Im} \varphi^{2024} + \ker \psi^{2025} \quad \text{и} \quad \text{Im} \varphi^{2024} \cap \ker \psi^{2025} = \{0\}.
+\]
+Если это верно, то представьте вектор \( v \) в виде суммы \( v = u + w \), где \( u \in \text{Im} \varphi^{2024} \) и \( w \in \ker \psi^{2025} \), и покажите, что такие \( u \) и \( w \) единственные.
+
+\textbf{Решение:}
+
+После приведения к ступенчатому виду матрицы А получаем:
+
+\[
+\begin{pmatrix}
+    1&1 & 0& 0\\
+    0& 0& 1& 0\\
+    0& 0& 0& 1\\
+    0& 0& 0& 0\\
+\end{pmatrix}
+\]
+т.е ранг 3, размерность ядра - 1.  как у оператора $\phi $ так и у опрератора $\psi$
+
+
+\vspace{1cm}
+
+\end{document}

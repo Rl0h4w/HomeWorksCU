@@ -1,0 +1,483 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+\usepackage{float}
+
+% Параметры страницы
+\geometry{top=2cm,bottom=2cm,left=2.5cm,right=2.5cm}
+\geometry{a4paper, margin=1in}
+
+% Заголовок документа
+\title{Домашнее задание}
+\author{Студент: Лохов Ростислав}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Математический Анализ}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Лохов Ростислав}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный Университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Предел функции}
+
+\subsubsection{Задача 10 \hfill 0,5 балла}
+
+\textbf{Условие задачи:}
+
+Предел функции по Коши:
+
+Докажи, используя определение предела по Коши, что $\lim\limits_{x \to 0} \frac{\sqrt{x^2 + 9} - 3}{x^2} = \frac{1}{6}$.
+
+\textbf{Решение: }
+\[
+(\forall \varepsilon > 0)(\exists \delta > 0) (\forall x \in \mathbb{R}) (0 < |x-0|< \delta \longrightarrow |\frac{\sqrt{x^2 + 9} - 3}{x^2} - \frac{1}{6}| < \varepsilon)
+\]
+
+\[
+|\frac{-x^2+6\sqrt{x^2+9}-18}{6x^2}| < \varepsilon
+\]
+
+\[
+\frac{1}{6\sqrt{x^2+9}+18} < \varepsilon
+\]
+
+\[
+\frac{\sqrt{\frac{1}{36}-\varepsilon}}{\varepsilon} < x
+\]
+
+\[
+\delta = -\frac{\sqrt{\frac{1}{36}-\varepsilon}}{\varepsilon}
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 11 \hfill 0,5 балла}
+
+\textbf{Условие задачи:}
+
+Докажи, используя определение предела по Коши, что $\lim\limits_{x \to 1} \frac{3}{(x - 1)^2} = +\infty$.
+
+\textbf{Решение: }
+
+\[
+\frac{3}{(x-1)^2} > \varepsilon
+\]
+
+\[
+\sqrt{\frac{3}{\varepsilon}}> x-1
+\]
+
+\[
+\delta = \sqrt{\frac{3}{\varepsilon}}
+\]
+
+чтд
+\vspace{1cm}
+
+\subsubsection{Задача 12 \hfill 0,5 балла}
+
+\textbf{Условие задачи:}
+
+Для функции $f$, график которой изображен на рисунке, укажи значение каждой из величин ниже, если оно существует. Если его нет, объясни, почему.
+
+а) $\lim\limits_{x \to -0} f(x)$;
+
+б) $\lim\limits_{x \to +0} f(x)$;
+
+в) $\lim\limits_{x \to 0} f(x)$;
+
+г) $f(0)$;
+
+д) $f(2 - 0)$;
+
+е) $f(2 + 0)$;
+
+ж) $\lim\limits_{x \to 2} f(x)$;
+
+з) $f(2)$;
+
+и) $\lim\limits_{x \to 4} f(x)$.
+
+\textbf{Решение: }
+
+а) -1
+
+б) =2
+
+в) не определено т.к терпит разрыв
+
+г) -1
+
+д) 2
+
+е) 0
+
+ж) не определено т.к терпит разрыв
+
+з) 1
+
+и) 3
+
+\vspace{1cm}
+
+\subsubsection{Задача 13 \hfill 1,5 балла}
+
+\textbf{Условие задачи:}
+
+Сформулируй в кванторах и неравенствах:
+
+а) $\lim\limits_{x \to -0} f(x) = 0$;
+
+б) $\lim\limits_{x \to -\infty} f(x) = \infty$;
+
+в) $\lim\limits_{x \to 2+0} f(x) = +\infty$;
+
+г) $\lim\limits_{x \to -0} f(x) \neq 0$;
+
+д) $\lim\limits_{x \to -\infty} f(x) \neq \infty$;
+
+е) $\lim\limits_{x \to 2+0} f(x) \neq +\infty$.
+
+\textbf{Решение: }
+a)
+\[
+\forall \varepsilon \exists \delta > 0: \foarall x(-\delta < x < 0 \Rightarrow |f(x)|<\varepsilon)
+\]
+
+б)
+\[
+\forall M > 0 \exists N \in \mathbb{R}: \forall x (x < N \Rightarrow f(x)>M)
+\]
+
+в)
+\[
+\forall M > 0 \exists \delta > 0: \forall x(2<x<2+\delta \Rightarrow f(x)>M)
+\]
+
+г)
+\[
+\exists \varepsilon > 0: \forall \delta > 0  \exists x(-\delta < x < 0 \land |f(x)| \ge \varepsilon)
+\]
+
+д)
+\[
+\exists M > 0: \forall N \in \mathbb{R} \exists x(x < n \land f(x) \le M)
+\]
+
+e)
+\[
+\exists M > 0: \forall \delta > 0 \exists x (2 < x < 2 + \delta \land f(x) \le M)
+\]
+\vspace{1cm}
+
+\subsubsection{Задача 14 \hfill 0,5 балла}
+
+\textbf{Условие задачи:}
+
+Докажи по определению 2, что
+
+а) $\lim\limits_{x \to -0} \frac{1}{x} = -\infty$;
+
+б) $\lim\limits_{x \to +0} \frac{1}{x} = +\infty$.
+
+\textbf{Решение: }
+а)
+\[
+\forall M > 0 \exists \delta > 0: -\delta < x < 0 \Rightarrow \frac{1}{x} < -M
+\]
+
+\[
+x > \frac{-1}{M}, x < 0 \Rightarrow -\frac{1}{M} < x < 0
+\]
+
+б)
+\[
+\forall M > 0 \exists \delta > 0 \forall x(0 < x < \delta \Rightarrow \frac{1}{x} > M)
+\]
+
+
+
+\vspace{1cm}
+
+\subsubsection{Задача 15 \hfill 2 балла}
+
+\textbf{Условие задачи:}
+
+Докажи теорему 2.
+
+\textbf{Решение: }
+
+\[
+0 < |x - x_0| < \delta \Rightarrow |f(x) - A| < 1
+\]
+
+\[
+|f(x)|=|f(x)-A+A| \le |f(x) - A| + |A| < 1 + |A|
+\]
+
+\[
+|f(x)| < |A| + 1
+\]
+
+\[
+|f(x)| \le M
+\]
+
+Таким образом f(x) ограничена в окрестности $x_0$ при налисчии конечного предела A в этой точке
+
+2 Теорема
+
+\[
+A > 0: A - 0.5A < f(x) < A+ 0.5A \Rightarrow 0.5A < f(x) < 1.5A
+\]
+
+\[
+f(x) > 0
+\]
+
+\[
+A < 0: |f(x) - A| < \frac{|A|}{2} \Rightarrow -\frac{|A|}{2} < f(x) - A < \frac{|A|}{2}
+\]
+
+\[
+-\frac{|A|}{2} + A = -1.5|A| < f(x) < 0.5|A|+A = -0.5|A|
+\]
+
+Таким образом f(x) < 0 в окрестности $x_0$
+
+3 Теорема
+
+Из теоремы 2 известно, что существует окрестность где функция сохраняет знак A. $f(x)\ge 0.5A > 0$
+
+\[
+|f(x)|^{-1}=f(x)^{-1}\le 0.5A^{-1}
+\]
+
+\[
+f(x)^{-1}\le M
+\]
+
+Таким образом доказано
+
+\vspace{1cm}
+
+\subsubsection{Задача 16 \hfill 2 балла}
+
+\textbf{Условие задачи:}
+
+Докажи, что $\lim\limits_{x \to +\infty} \arctan x = \frac{\pi}{2}$.
+
+\textbf{Решение: }
+\[
+\arctan(x)  = y, tan(y) = x
+\]
+
+тогда тангенс должен стремиться к бесконечности, это может быть достигнуто в точке $0.5 \pi$, $y \in [-pi/2;pi/2]$
+
+\vspace{1cm}
+
+\subsubsection{Задача 17 \hfill 0,5 балла}
+
+\textbf{Условие задачи:}
+
+Докажи, что у функции $f(x) = \sin(3x)$ не существует предела при $x \to +\infty$.
+
+\textbf{Решение: }
+
+\vspace{1cm}
+
+\subsubsection{Задача 18 \hfill 3 балла}
+
+\textbf{Условие задачи:}
+
+Верно ли, что функция $f(x) = \frac{1}{x} \cos \frac{1}{x}$:
+
+а) ограничена хотя бы в какой-то окрестности $x = 0$;
+
+б) является бесконечно большой при $x \to 0$?
+
+\textbf{Решение: }
+a) нет, т.к слева и справа при приближении к 0 имеем пределы - и + бесконечность 
+б) да, является бесконечно большой, т.к на косинус около 0 не влияет знак аргумента
+\vspace{1cm}
+
+\subsubsection{Задача 19 \hfill 0,5 балла}
+
+\textbf{Условие задачи:}
+
+Вычисление пределов:
+
+Вычисли $\lim\limits_{x \to -2} \frac{x^2 + x - 2}{x^2 + 3x + 2}$.
+
+\textbf{Решение: }
+
+\[
+\frac{(x-1)(x+2)}{(x+1)(x+2)}=\frac{x-1}{x+1}=3
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 20 \hfill 1,5 балла}
+
+\textbf{Условие задачи:}
+
+Вычисли $\lim_{x \to \infty} \frac{\sqrt[3]{x+8}-2}{\sqrt{1+2x}-1}$.
+
+\textbf{Решение: }
+
+\[
+\frac{\frac{x}{(\sqrt[3]{x+8})^2+2\sqrt[3]{x+8}+4}}{\frac{2x}{\sqrt{1+2x}+1}}=\frac{\sqrt{1+2x}+1}{2((\sqrt[3]{x+8})^2 + 2\sqrt[3]{x+8} + 4)}
+\]
+Подставляем, получаем 1/12
+\vspace{1cm}
+
+\subsubsection{Задача 21 \hfill 2 балла}
+
+\textbf{Условие задачи:}
+
+Пусть $f(x) = \frac{P(x)}{Q(x)}$ — рациональная дробь, где $P(x)$ и $Q(x)$ — многочлены. Найди $\lim\limits_{x \to \infty} f(x)$.
+
+\textbf{Решение: }
+Возможны 3 исхода, при старшей степени в числителе больше чем в знаменателе, меньше, и когда они равны. В таком случае мы выделяем старшие степени из числителя и знаменателя.
+
+1. степень старшего члена числителя больше чем знаменателя, в таком случае при вынесении старшего члена из числителя и знаменателя у нас будет вид $x^{n-m}\cdot \frac{\sum_{k=0}^{n}\frac{a_{n-k}}{x^k}}{\sum_{k=0}^{m}\frac{a_{m-k}}}$ и т.к n>m, то получим, что предел будет бесконечностью
+
+2. в случае если степень старшего члена числителя меньше чем у знаменателя, то доказывается аналогично, но при n<m $x^{n-m}$ будет $x^{-|n-m|}$, т.е предел будет 0
+
+3. в случае если они будут равны, то мы получим $x^{n-m}\cdot \frac{\sum_{k=0}^{n}\frac{a_{n-k}}{x^k}}{\sum_{k=0}^{m}\frac{a_{m-k}}} = 1 * \frac{a_n}{b_m}$
+
+\vspace{1cm}
+
+\subsubsection{Задача 22 \hfill 1,5 балла}
+
+\textbf{Условие задачи:}
+
+Пусть функции $f$ и $g$ не имеют предела в точке $x_0$. Следует ли отсюда, что функции $f + g$ и $f \cdot g$ не имеют предела?
+
+\textbf{Решение: }
+а) нет
+б) нет
+
+Обоснование, рассмотрим пределы функций и предел суммы двух функций:
+
+\[
+\forall \varepsilon > 0 \exists \delta > 0: \forall x(0 < |x-x_0| < \delta) \Rightarrow |f(x) + g(x) - L| < \varepsilon
+\]
+
+Ну очевидно, что это может выполняться в случае если одна функция как бы компенсирует другую, и оно выполняется корректно, но это не является общим решением. Т.е нет гарантий, что это будет выполняться, например sin(1/x) и sin(2/x)
+
+С произведением такая же история, нет гарантий. sin(1/x) и sin(1/x) не будет иметь предел произведения. В то время как xsin(1/x) и xsin(1/x) будет иметь предел произведения.
+
+\vspace{1cm}
+
+\subsubsection{Задача 23 \hfill 1,5 балла}
+
+\textbf{Условие задачи:}
+
+Пусть $\exists \lim\limits_{x \to x_0} f(x) \in \mathbb{R}$, $\nexists \lim\limits_{x \to x_0} g(x)$. Следует ли отсюда, что
+
+1. $\nexists \lim\limits_{x \to x_0} (f(x) + g(x))$;
+
+2. $\nexists \lim\limits_{x \to x_0} (f(x) \cdot g(x))$?
+
+\textbf{Решение: }
+
+1. $\lim_{x \to x_0}(f(x) + g(x)) = A + \lim_{x \to x_0} g(x)$ - не будет существовать
+
+2. $\lim_{x \to x_0}(f(x)\cdot g(x)) = A\cdot \lim_{x \to x_0} g(x)$ - в таком случае не существует за исколючением, если A = 0 и g(x) ограничена, в таком случае предел - 0
+
+\vspace{1cm}
+
+\subsubsection{Задача 24 \hfill 2 балла}
+
+\textbf{Условие задачи:}
+
+Докажи, что функция
+
+\[ f(x) = 
+  \begin{cases} s
+   x, & \text{если } x \in \mathbb{Q}, \\
+   0, & \text{если } x \notin \mathbb{Q}
+  \end{cases}
+\]
+
+имеет предел только в точке $x = 0$.
+
+\textbf{Решение: }
+Предположим, что функция имеет предел в точке $x_0$ отличной от нуля. Тогда
+
+\[
+(\forall \varepsilon > 0) (\exists \delta) (\forall x): 0 < |x-x_0| < \delta; |f(x) - L| < \varepsilon
+\]
+
+Окей, предположим L существует в точке $x_0$ отличной от 0, тогда пусть $\varepsilon = |x_0|/2$. Рассмотрим два случая
+
+\begin{enumerate}
+    \item x - рационально $x-x_0+x_0-L \le |x-x_0| + |x_0 - L| < \delta + |x_0|/2$, тогда т.к x близко к $x_0$ если мы выберем $\delta < |x_0|/2$ таким образом $|x_0-L| < |x_0|/2$ т.е $|L| > |x_0| - |x_0 - L| > |x_0| - |x_0|/2 = |x_0|/2$
+    \item x - иррационально, тогда $|0-L| = |L| < |x_0|/2$
+    \item а т.к первый пункт противоречит второму, то мы говорим, что предположение о том, что $x_0\ne 0$ неверно
+    \item покажем что предел в точке 0 равен 0
+    \item Если x рационален, то $|f(x)-0|=|x|<\varepsilon$ если x иррационален, то $|f(x)-0| = |0| = 0 < \varepsilon$ 
+\end{enumerate}
+
+\vspace{1cm}
+
+\subsubsection{Задача 25 \hfill 1,5 балла}
+
+\textbf{Условие задачи:}
+
+Условие (19) — это:
+
+Пусть функция $f(x)$ задана на интервале $(a; b)$, причём определение равномерно непрерывной на $(a; b)$ функции.
+
+Мы его рассмотрим в теме «Непрерывность».
+
+\[ \forall \varepsilon > 0 \, \exists \delta > 0: \forall x_1, x_2 \in (a; b): |x_1 - x_2| < \delta \Rightarrow |f(x_1) - f(x_2)| < \varepsilon. \quad \text{(19)} \]
+
+Докажи, что существуют конечные $\lim\limits_{x \to a+0} f(x)$ и $\lim\limits_{x \to b-0} f(x)$.
+
+\textbf{Решение: }
+$\{x_n\}$ - последовательность от a до b такая, что $x_n \to a+0$ при $n \to \infty$
+
+$\forall n, m, \to \infty < \delta \Rightarrow |f(x_n) - f(x_m)| < \varepsilon$ т.е фундаментальная
+
+Воспользуемся полнотой вещественных чисел, т.е в пространстве вещественных чисел любая фундаментальная последовательность сходится к L
+
+Если бы для двух разных последовательностей ${x_n} & {y_n} \to a+0$ $\lim f(x_n) & \lim f(y_n)$ т.е пределы были бы разные, то это бы противоречило равномерной непрерывности, т.к $|f(x_n)-f(y_n)|$ могла бы быть сколь угодно малой при больших n. Значит предел существует. Аналогично и для другого случая.
+\vspace{1cm}
+
+\end{document}

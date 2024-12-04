@@ -1,0 +1,490 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+\usepackage{float}
+
+% Параметры страницы
+\geometry{top=2cm,bottom=2cm,left=2.5cm,right=2.5cm}
+\geometry{a4paper, margin=1in}
+
+% Заголовок документа
+\title{Домашнее задание}
+\author{Студент: Лохов Ростислав}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Математический Анализ}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Лохов Ростислав}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный Университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Замечательные пределы и асимптотический анализ}
+
+\subsection{Первый замечательный предел}
+
+\subsubsection{Задача 1 \hfill 0,5 балла}
+\textbf{Условие задачи:} Найди предел $\lim_{x \to 0} \frac{2}{\sin(2x)\cdot \sin(x)} - \frac{1}{\sin^2(x)}$.
+
+\textbf{Решение: } 
+
+\[
+\frac{2}{2sin^2(x)cos(x)}-\frac{1}{sin^2(x)} = \frac{1-\cos(x)}{\sin^2(x)\cos(x)} = \frac{1-\cos(x)}{\cos(x)-\cos^3(x)} = \frac{1}{\cos(x)(1+\cos(x))} = 0.5
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 2 \hfill 0,5 балла}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to 0} \left( x \cot 8x \right) \).
+
+\textbf{Решение: } 
+
+\[
+\lim_{x \to 0} \frac{x}{\tg(8x)} = 0.125
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 3 \hfill 0,5 балла}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to 0} \left( \frac{1}{\sin^2 x} - \frac{3}{\sin x \sin 3x} \right) \).
+
+\textbf{Решение: } 
+
+\[
+\frac{1}{\sin^2(x)} - \frac{3}{\sin^2(x)(3 -4\sin^2(x))} = \frac{-4\sin^2(x)}{\sin^2(x)(3 -4\sin^2(x))} = -\frac{4}{3}
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 4 \hfill 1,5 балла}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to 0} \frac{\sin^2 2x}{4 \sin \left( \frac{\pi}{3} + x \right) \sin \left( \frac{\pi}{3} - x \right)-3} \).
+
+\textbf{Решение: }
+
+\[
+\frac{-\sin^2(2x)}{2(0.5 + \cos(2x)) - 3} = \frac{-\sin^2(2x)}{2\cos(2x)-2} = \frac{4\sin^2(x)\cos^2(x)}{2\cos(2x)-2} = \frac{4\sin^2(x)\cos^2(x)}{-4\sin^2x} = -1
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 5 \hfill 0,5 балла}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to -\frac{\pi}{2}} \frac{\cos x}{\frac{3\pi}{2} + 4\pi x - 4x^2} \).
+
+\textbf{Решение: } 
+$t=\frac{\pi}{2} + x$
+\[
+\lim_{t \to 0}\frac{\sin(t)}{3\pi + 16\pi t - 6\pi^2 - 8t^2} = 0
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 6 \hfill 0,5 балла}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to \infty} \left( x^2 (\cos\frac{3}{x} - \cos\frac{5}{x}) \right) \).
+
+\textbf{Решение: }
+
+$t = \frac{1}{x}$
+\[
+\lim_{t \to 0} \frac{1}{t^2}\cdot (\cos(3t)-\cos(5t)) = \frac{2\sin(4t)\sin(t)}{t^2} = 8
+\]
+
+\vspace{1cm}
+
+\subsection{Второй замечательный предел}
+
+\subsubsection{Задача 7 \hfill 0,5 балла}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to 0} \frac{10^x - 2^x}{x} \).
+
+\textbf{Решение: } 
+
+\[
+\lim_{x \to 0}\frac{2^x(5^x-1)}{x}= \ln(5)
+\]
+
+
+
+\vspace{1cm}
+
+\subsubsection{Задача 8 \hfill 0,5 балла}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to \frac{\pi}{2}} (1 + \cot x)^{\tan x} \).
+
+\textbf{Решение: } 
+
+\[
+\lim_{x \to \frac{\pi}{2}}(1+ctg(x))^{tg(x)} = e
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 9 \hfill 1,5 балла}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to 0} (\sqrt{1 + x} - x)^{\frac{1}{x}} \).
+
+\textbf{Решение: }
+
+\[
+\lim_{x \to 0} (\sqrt{1+x} - x)^{\frac{1}{x}} = \lim_{x \to 0} (1+ (\sqrt{1+x} - x-1))^{\frac{1}{x}}
+\]
+
+При условии, что f(x) стремится к 0, а g(x) стремится к бесконечности и при условии, что их произведение имеет конечный предел:
+
+\[
+(1+f(x))^{g(x)} = e^{g(x)\cdot f(x)}
+\]
+
+
+Тогда
+
+\[
+\lim_{x \to 0}(1+f(x))^{g(x)} = e^{\lim_{x \to 0} \frac{\sqrt{1+x}-1}{x}-1} = e^{\lim_{x \to 0} \frac{1}{\sqrt{1+x}+1}-1}=e^{\lim_{x \to 0} -\frac{\sqrt{x+1}}{\sqrt{x+1}+1}} = e^{-0.5} = \frac{1}{\sqrt{e}}
+\]
+
+
+\vspace{1cm}
+
+\subsubsection{Задача 10 \hfill 1 балл}
+\textbf{Условие задачи:} Найди предел \( \lim_{x \to 5} \frac{\log_5 x - 1}{x - 5} \).
+
+\textbf{Решение: }
+
+\[
+\lim_{x \to 5}(\frac{\ln(\frac{x}{5})}{\ln(5)(x-5)}) 
+\]
+t = x-5
+
+\[
+\lim_{t \to 0}(\frac{\ln(1+\frac{t}{5})}{\ln(5)(t)}) = \frac{1}{5\ln(5)}
+\]
+
+\vspace{1cm}
+
+\subsection{Задачи по o-малое}
+
+\subsubsection{Задача 11 \hfill 1,5 балла}
+\textbf{Условие задачи:} Верно ли утверждение:
+1. Если \( f \sim g \) и \( g \sim h \) при \( x \to a \), то \( o(f) = o(g) \) при \( x \to a \).
+
+2. Если \( f = o(g) \) и \( f = o(h) \) при \( x \to a \), то \( f = o(g - h) \) при \( x \to a \).
+
+3. Если \( f = o(g) \) при \( x \to a \), то \( o(f + g) = o(g) \) при \( x \to a \).
+Докажи или приведи контрпример.
+
+\textbf{Решение: }
+
+
+\vspace{1cm}
+
+\subsubsection{Задача 12 \hfill 0,5 балла}
+\textbf{Условие задачи:} Докажи, что если чётная функция \( f(x) \) удовлетворяет условию \( f(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + o(x^3) \) при \( x \to 0 \), то \( a_1 = a_3 = 0 \).
+\textbf{Решение: } (Добавьте решение задачи здесь)
+
+\vspace{1cm}
+
+\subsubsection{Задача 13 \hfill 1 балл}
+\textbf{Условие задачи:} Упрости выражение:
+а) \( \left( 1 + x + \frac{x^2}{2} + o(x^2) \right) \left( 1 + x^2 - \frac{x^2}{8} + o(x^2) \right) \), при \( x \to 0 \);
+
+б) \( \left( x - \frac{x^3}{6} + o(x^4) \right) \left( x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + o(x^4) \right) \), при \( x \to 0 \);
+
+в) \( \left( 1 + x + \frac{x^2}{2} + o(x^3) \right) \left( 2x - 2x^2 - \frac{8x^3}{3} - 4x^4 + o(x^4) \right) \), при \( x \to 0 \).
+\textbf{Решение: }
+
+1)
+\[
+1 + x +  \frac{11x^2}{8} + o(x^2)
+\]
+
+2)
+\[
+x^2-\frac{x^3}{2} - \frac{x^4}{6} + o(x^4)
+\]
+
+3)
+\[
+2x - \frac{11x^3}{3} -x^4 + o(x^4)
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 14 \hfill 0,5 балла}
+\textbf{Условие задачи:} Представь функцию \( f(x) = (x + x^2 - x^3 + x^4)^3 \) в виде \( P(x) + o(x^5) \), где \( P(x) \) — многочлен степени не выше пятой.
+
+\textbf{Решение: }
+
+\[
+(x + x^2 - x^3 + x^4)^3 = a^3 + 3a^2b + 3a^2c + 3a^2d + 3ab^2 + 6abc + 6abd + 3ac^2 + 6acd + 3ad^2 + b^3 + 3b^2c + 3b^2d + 3bc^2 + 6bcd + 3bd^2 + 3c^3 + 3c^2d + 3cd^2 + d^3
+\]
+
+\[
+(x + x^2 - x^3 + x^4)^3 = x^3 + 3x^4 - 3x^5 + 3x^5 + o(x^5) = x^3 + 3x^4 + o(x^5)
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 15 \hfill 1,5 балла}
+\textbf{Условие задачи:} Известно, что \( f(x) = o(g(x)) \), \( g(x) \to +\infty \), при \( x \to +\infty \). Докажи, что \( e^{f(x)} = o(e^{g(x)}) \), при \( x \to +\infty \).
+
+\textbf{Решение: }
+
+
+\[
+\lim_{x \to \infty}\frac{f(x)}{g(x)} = 0
+\]
+
+\[
+\lim_{x \to \infty}\frac{e^{f(x)}}{e^{g(x)}}=e^{f(x)-g(x)}=e^{-g(x)} = 0
+\]
+\vspace{1cm}
+
+\section{O-большое и Эквивалентность}
+
+\subsubsection{Задача 16 \hfill 1 балл}
+\textbf{Условие задачи:} Докажи, что функции \( f(x) = \frac{1 - x}{1 + x} \) и \( g(x) = 1 - \sqrt{x} \) — одного порядка малости при \( x \to 1 \).
+\textbf{Решение: } (Добавьте решение задачи здесь)
+
+\vspace{1cm}
+
+\subsubsection{Задача 17 \hfill 0,5 балла}
+\textbf{Условие задачи:} Можно ли в определении \( O \)-большого вместо \( C > 0 \) написать \( C \in \mathbb{R} \)?
+\textbf{Решение: } (Добавьте решение задачи здесь)
+
+\vspace{1cm}
+
+\subsubsection{Задача 18 \hfill 2,5 балла}
+\textbf{Условие задачи:} Докажи следующие утверждения:
+
+а) если \( f(x) = o(g(x)) \) при \( x \to x_0 \), то \( f(x) = O(g(x)) \) при \( x \to x_0 \)
+
+б) если \( f(x) = \varphi(x)g(x) \) и \( \exists \lim_{x \to x_0} \varphi(x) = k \in \mathbb{R} \), то \( f(x) = O(g(x)) \), при \( x \to x_0 \)
+
+в) если \( f_1(x) = O(g_1(x)) \), \( f_2(x) = O(g_2(x)) \), при \( x \to x_0 \), то \( f_1(x)f_2(x) = O(g_1(x)g_2(x)) \), при \( x \to x_0 \).
+
+\textbf{Решение: } 
+
+Определения о малого и О большого
+1)
+\[
+\lim{x \to x_0} \frac{f(x)}{g(x)} = 0 \land \lim{x \to x_0} |f(x)| \le M|g(x)|
+\]
+
+\[
+\frac{f(x)}{g(x)} \le \varepsilon \land \frac{|f(x)|}{|g(x)|} \le M
+\]
+Возьмем $\varepsilon = 1$, тогда M=1, чтд
+
+2)
+\[
+\lim_{x \to x_0} f(x) = \lim_{x \to x_0}\phi(x) \cdot \lim_{x \to x_0} g(x) = \lim_{x \to x_0} f(x) = k \cdot \lim_{x \to x_0} g(x)
+\]
+
+3)
+\[
+\lim_{x \to x_0} f_1(x)f_2(x) \le M_1 M_2 |g_1(x)g_2(x)|  \forall x \in (U_1 \cap U_2)
+\]
+таким образом
+\[
+f_1(x)f_2(x) = O(g_1(x)g_2(x))
+\]
+
+
+
+
+\vspace{1cm}
+
+\subsubsection{Задача 19 \hfill 1 балл}
+\textbf{Условие задачи:} Вычисли:
+а) \( \lim_{x \to 0} \frac{\sin 2x + 2 \arctan 3x + 3x^2}{\ln(1 + 3x + \sin^2 x) + x e^x} \);
+б) \( \lim_{x \to +\infty} x^2 \left( \ln \left( 1 + \frac{1}{x^2} \right) - \sqrt{\frac{1}{x}} \right) \).
+\textbf{Решение: } (Добавьте решение задачи здесь)
+
+\vspace{1cm}
+
+\subsubsection{Задача 20 \hfill 1 балл}
+\textbf{Условие задачи:} Даны два утверждения:
+1) \( f(x) = 2x + o(x^2) \) при \( x \to 0 \);
+2) \( f(x) = 2x + 3x^2 + o(x) \) при \( x \to 0 \).
+Верно ли, что (2) $\rightarrow$ (1)? Верно ли, что (1) $\rightarrow$ (2)?
+\textbf{Решение: } (Добавьте решение задачи здесь)
+
+\vspace{1cm}
+
+\subsubsection{Задача 21 \hfill 1 балл}
+\textbf{Условие задачи:} Пусть \( f(x) = \sqrt{x+\sqrt{x}} \). Докажи, что
+
+а) \( f(x) \sim \sqrt{x} \) при \( x \to +\infty \)
+
+б) \( f(x) \sim \sqrt[4]{x} \) при \( x \to +0 \).
+
+\textbf{Решение: }
+
+a)
+\[
+\sqrt[4]{x} \cdot \sqrt{\frac{x}{\sqrt{x}} + 1} = \sqrt[4]{x} \cdot \sqrt{\sqrt{x} + 1} = \sqrt{x}
+\]
+т.к при значениях аргумента данной функции стремящемся к бесконечности 1 можно пренебречь
+
+б)
+\[
+\lim_{x \to 0+} \frac{\sqrt[4]{x} \cdot \sqrt{\frac{x}{\sqrt{x}} + 1}}{\sqrt[4]{x}} = \lim_{x \to 0+} \sqrt{\sqrt{x}+1} = 1
+\]
+чтд
+
+
+
+
+\vspace{1cm}
+
+\subsubsection{Задача 22 \hfill 1 балл}
+\textbf{Условие задачи:} Докажи, что если \( f(x) = o(g(x)) \) и \( g(x) \sim h(x) \) при \( x \to x_0 \), то \( f(x) = o(h(x)) \) при \( x \to x_0 \).
+\textbf{Решение: }
+
+\[
+\frac{f(x)}{h(x)} = \frac{f(x)\cdot g(x)}{g(x) \cdot h(x)}
+\]
+
+\[
+\lim_{x \to x_0} \frac{f(x)}{h(x)} = 0
+\]
+
+\[
+f(x) = o(h(x))
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 23 \hfill 1,5 балла}
+\textbf{Условие задачи:} Найди пределы:
+
+а) \( \lim_{x \to 0} \frac{\sqrt[5]{(1 + 10x)} - \sqrt[3]{(1 + 3x)}}{\arcsin(3x + x^2) - \sh(2x + x^3)} \)
+
+б) \( \lim_{x \to +\infty} x \left( \ln \left( 1 + \frac{x}{2} \right) - \ln \frac{x}{2} \right) \)
+
+в) \( \lim_{x \to 0} \frac{(e^x - 1) \arcsin x^2}{\tanh x \ln^2 (1 + x)}\).
+
+\textbf{Решение: } 
+Лопиталем, не знаю как по другому можно сделать балансируя между качеством и скоростью выполнения задания, во всех примерах неопределённость вида 0/0:
+
+а)
+\[
+\frac{2(1+10x)^{\frac{-4}{5}} - (1+3x)^{\frac{-2}{3}}}{\frac{3+2x}{\sqrt{1-(3x+x^2)^2}} - \cosh(2x+x^2)\cdot (2+3x^2)} = 1
+\]
+
+б)
+\[
+\frac{2x^2}{x^2+2x} = 2
+\]
+
+в)
+Тут как мне кажется лучше в ряд Тейлора т.к в окрестности 0 т.е Ряд Маклорена.
+\[
+\lim_{x \to 0} \frac{(x+0.5x^2)(x^2)}{(x-\frac{x^2}{2})^2\cdot x^2} = \lim_{x \to 0} (1+0.5x) = 1
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 24 \hfill 1,5 балла}
+\textbf{Условие задачи:} Пусть \( x \to 0 \). Выдели главный член вида \( Cx^n \) (где \( C \) — константа, \( n \) — порядок малости относительно переменной \( x \)) следующих функций:
+
+а) \( f_1(x) = 3x - 4x^2 + 5x^5 \)
+
+б) \( f_2(x) = \sqrt{1 + 2x} - \sqrt{1 - 2x} \)
+
+в) \( f_3(x) = \tan(2x) - \sin(2x) \).
+
+\textbf{Решение: }
+
+a) 3x
+
+
+В ряд Маклорена т.к около 0
+
+б) 
+\[
+(1+x)-(1-x) = 2x
+\]
+
+в)
+\[
+\sin(2x)(\frac{1}{1-2\sin(x)^2}-1)=2x(\frac{1}{1-2x^2}-1) = 4x^3
+\]
+
+\vspace{1cm}
+
+\subsubsection{Задача 25 \hfill 1,5 балла}
+\textbf{Условие задачи:} Пусть \( x \to 1 \). Выдели главный член вида \( C(x - 1)^n \) следующих функций:
+
+а) \( f_1(x) = e^{2x} - e^2 \);
+
+б) \( f_2(x) = 2x^3 - 6x + 4 \).
+
+\textbf{Решение: } 
+
+a)
+t = x-1
+x = t+1
+\[
+\lim_{t \to 0} e^{2t+2}-e^2 =  e^2(e^{2t}-1) = e^{\ln(e^2)+\ln(e^{2t}-1)}=e^{ln(e^2)+ln(2t)}=e^2(2t) \Longleftrightarrow \lim_{x \to 1} 2e^2(x-1)
+\]
+
+б)
+\[
+2t^3+6t^2=2e^{\ln(t) + \ln(t) + \ln(t)} + 6e^{\ln(t) + \ln(t)}=6t^2 \longleftrightarrow 6(x-1)^2
+\]
+
+
+
+\vspace{1cm}
+
+\subsubsection{Задача 26 \hfill 1,5 балла}
+\textbf{Условие задачи:} Пусть \( x \to 1 + 0 \). Выдели главный член вида \( C \left( \frac{1}{x - 1} \right)^n \) следующих функций:
+
+а) \( f_1(x) = \frac{1}{\sin \pi x} \)
+
+б) \( f_2(x) = \sqrt{\frac{x+1}{x-1}} \).
+
+\textbf{Решение: }
+
+a)
+\[
+\lim_{x \to 1+} \frac{1}{-\pi(x-1)} = -\frac{1}{\pi} \cdot (\frac{1}{x-1})^1
+\]
+
+б)
+t = x-1
+\[
+\sqrt{1+\frac{2}{t}} = \sqrt{2}\cdot(\frac{1}{x-1})^{0.5}
+\]
+
+\end{document}

@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Allow .tex and .pdf files
+!*.tex
+!*.pdf
+
+# Allow the .gitignore file itself
+!.gitignore
+
+# Allow the LICENSE file
+!LICENSE

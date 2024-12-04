@@ -1,0 +1,617 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+\usepackage{float}
+
+% Параметры страницы
+\geometry{top=2cm,bottom=2cm,left=2.5cm,right=2.5cm}
+\geometry{a4paper, margin=1in}
+
+% Заголовок документа
+\title{Домашнее задание}
+\author{Студент: Лохов Ростислав}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Математический Анализ}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Лохов Ростислав}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный Университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Задачи для самостоятельного решения}
+
+\subsection{Задача 1}
+\textbf{Условие задачи:} Найди собственные значения и собственные векторы линейных операторов, заданных в некотором базисе матрицами:
+\begin{enumerate}
+    \item 
+    \[
+    \begin{pmatrix}
+    2 & -1 & 2 \\
+    5 & -3 & 3 \\
+    -1 & 0 & -2
+    \end{pmatrix};
+    \]
+    \item 
+    \[
+    \begin{pmatrix}
+    4 & -5 & 2 \\
+    5 & -7 & 3 \\
+    6 & -9 & 4
+    \end{pmatrix}.
+    \]
+\end{enumerate}
+
+\textbf{Решение: }
+
+а)
+\[
+\det(A-\lambda I) = \lambda^3+3\lambda^2+3\lambda + 1 = 0 \Longleftrightarrow (\lambda + 1)^3=0
+\]
+
+\[
+(A+I)x = 0
+\]
+
+\[
+x = t \begin{pmatrix}
+    -1 \\
+    -1 \\
+    1
+\end{pmatrix}
+\]
+
+б) 
+\[
+\det(A-\lambda I) = \lambda^2(-\lambda + 1) = 0
+\]
+
+$\lambda = 0$
+\[
+x = t \begin{pmatrix}
+    1 \\
+    2 \\
+    3
+\end{pmatrix}
+\]
+
+$\lambda = 1$
+\[
+x = t \begin{pmatrix}
+    1 \\ 
+    1 \\
+    1 
+\end{pmatrix}
+\]
+
+\subsection{Задача 2}
+\textbf{Условие задачи:} Являются ли операторы в $\mathbb{R}^4$ со следующими матрицами диагонализируемыми?
+\begin{enumerate}
+    \item 
+    \[
+    A =
+    \begin{pmatrix}
+    1 & 3 & 5 & 0 \\
+    -1 & 2 & 1 & 4 \\
+    -1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix};
+    \]
+    \item 
+    \[
+    B =
+    \begin{pmatrix}
+    1 & 2 & 3 & 0 \\
+    -1 & -2 & 1 & 0 \\
+    -1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0
+    \end{pmatrix}.
+    \]
+\end{enumerate}
+Если нет, то объясни почему. Если да, то найди:
+\begin{enumerate}
+    \item базис, в котором оператор имеет диагональный вид;
+    \item сам диагональный вид.
+\end{enumerate}
+Здесь пропуски в матрицах - это нули.
+
+\subsection{Задача 3}
+\textbf{Условие задачи:} Какие из следующих матриц подобны? В случаях подобия укажи, с помощью какой матрицы можно из одной получить другую:
+\begin{enumerate}
+    \item 
+    \[
+    \begin{pmatrix}
+    1 & 0 \\
+    0 & 0
+    \end{pmatrix}
+    \text{ и }
+    \begin{pmatrix}
+    0 & 0 \\
+    0 & 1
+    \end{pmatrix};
+    \]
+    \item 
+    \[
+    \begin{pmatrix}
+    3 & 1 \\
+    1 & 2
+    \end{pmatrix}
+    \text{ и }
+    \begin{pmatrix}
+    3 & -1 \\
+    2 & 1
+    \end{pmatrix};
+    \]
+    \item 
+    \[
+    \begin{pmatrix}
+    2 & 1 \\
+    1 & 1
+    \end{pmatrix}
+    \text{ и }
+    \begin{pmatrix}
+    2 & 1 \\
+    0 & 1
+    \end{pmatrix}.
+    \]
+\end{enumerate}
+
+\subsection{Задача 4}
+\textbf{Условие задачи:} Для каждого из следующих линейных операторов в $\mathbb{R}^3$ найди его матрицу в стандартном базисе, собственные значения и собственные подпространства для вычисленных собственных значений.
+\begin{enumerate}
+    \item Отражение относительно плоскости $xy$.
+    \item Ортогональная проекция на плоскость $xz$.
+    \item Поворот против часовой стрелки вокруг положительной оси $x$ на угол $90^\circ$.
+\end{enumerate}
+
+\subsection{Задача 5}
+\textbf{Условие задачи:} Для диагонализируемой матрицы $A$ найти $\sin(A)$ и $\cos(A)$, если
+\[
+A =
+\begin{pmatrix}
+3 & -1 \\
+2 & 0
+\end{pmatrix}.
+\]
+Проверь, выполняется ли равенство $\sin^2(A) + \cos^2(A) = I$.
+
+\textbf{Решение: }
+
+\[
+\det(A-\lambda I) = 0 \Leftrightarrow (\labda - 2)(\lambda - 1) = 0
+\]
+
+собственные векторы: 
+\[
+v_1 = \begin{pmatrix}
+    1 \\
+    1
+\end{pmatrix}
+\]
+
+\[
+v_2 = \begin{pmatrix}
+    1 \\
+    2
+\end{pmatrix}
+\]
+
+\[
+PDP^{-1} = \begin{pmatrix}
+    1 & 1 \\
+    1 & 2 
+\end{pmatrix} \cdot \begin{pmatrix}
+    2 & 0 \\
+    0 & 1 
+\end{pmatrix} \cdot \begin{pmatrix}
+    2 & -1 \\
+    -1 & 1 
+\end{pmatrix}
+\]
+
+
+\[
+\sin^2(A) + \cos^2(A) = I \Longleftrightarrow P(\sin^2(D) + \cos^2(D))P^{-1} = I = \Longleftrightarrow PIP^{-1} = I
+\]
+
+
+\subsection{Задача 6}
+\textbf{Условие задачи:} Пусть $V = C^\infty(\mathbb{R})$ — множество бесконечно дифференцируемых функций на вещественной прямой.
+\begin{enumerate}
+    \item Проверь, что $V$ является векторным пространством.
+    \item Проверь, что отображение $\phi: V \to V$, заданное по правилу $f \mapsto f''$ (взятие второй производной), является линейным оператором. \emph{В каком месте мы пользуемся тем, что функции бесконечное число раз дифференцируемы?}
+    \item Проверь, что векторы $\sin(ax)$ и $\cos(bx)$ являются собственными для $\phi$. Найди соответствующие собственные значения.
+\end{enumerate}
+
+\textbf{Решение: }
+
+1) сумма двух бесконечно дифф функций является бесконечно дифф
+
+2) Умноежние функции на скаляр сохраняет дифф
+
+3) Ассоциативность достигается по свойствам функций
+
+4) Коммутативность таже следует из свойств сложений фукнций
+
+5) существует функция 0(x)=0 для всех x которая является нулевым элементом
+
+6) существование обратного элемента также достигается f + (-f) = 0
+
+7) дистрибутивность умножения на скаляр относительно сложения векторов также достигается
+
+8) дистрибутивность умножения на скаляр относительно сложения скаляров выполняется
+
+9) ассоциативность умножения на скаляр выполняется
+
+10) существование единичного элемента умножения 1f=f 
+
+11) $\phi(f+g) = (f+g)`` = f`` + g`` = \phi(f)+\phi(g)$
+
+12) $\phi(\alpha f) = (\alhpa f)`` = \alpha f`` = \alpha \phi(f)$
+
+таким образом V является векторным пространством и обеспечена замкнутость оператора $\phi$ в пространстве V
+
+13) $\sin(ax): f``(x)=-a^2(\sin(ax))=-a^2f$ - собственное значение - $-a^2$
+
+14) $\cos(bx): f``(x)= -b^2\cos(bx) = -b^2f$ - собственное значение  - $-b^2$
+
+таким образом простейшие триг функции являются собственными векторами оператора $\phi$
+
+\subsection{Задача 7}
+\textbf{Условие задачи:} Докажи, что в пространстве $\mathbb{R}[x]_{\leq n}$ линейный оператор $f(x) \mapsto f(ax + b)$ имеет множество собственных значений $1, a, \dots, a^n$.
+
+\textbf{Решение: }
+
+\[
+T(x^k) = (ax+b)^k = \sum_{i=0}^{k}\binom{k}{i}a^ib^{k-i}x^i
+\]
+
+\[
+[T] = \begin{pmatrix}
+1 & \binom{1}{0} b & \binom{2}{0} b^2 & \dots & \binom{n}{0} b^n \\
+0 & a & \binom{2}{1} a b & \dots & \binom{n}{1} a b^{n-1} \\
+0 & 0 & a^2 & \dots & \binom{n}{2} a^2 b^{n-2} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \dots & a^n \\
+\end{pmatrix}
+\]
+
+Поскольку матрица верхнетреугольная, то её собственныве значения равны элементам главной диагонали т.е $1, a, a^2...a^n$
+
+\subsection{Задача 8}
+\textbf{Условие задачи:} Пусть $\phi: V \to V$ — обратимый оператор. Докажи, что у операторов $\phi$ и $\phi^{-1}$ собственные векторы совпадают.
+
+\textbf{Решение: }
+\[
+\varphi(\mathbf{v}) = \lambda \mathbf{v}, \quad \lambda \neq 0
+\]
+
+\[
+\varphi^{-1}(\varphi(\mathbf{v})) = \varphi^{-1}(\lambda \mathbf{v}) \\
+\Rightarrow \mathbf{v} = \lambda \varphi^{-1}(\mathbf{v})
+\]
+
+\[
+\varphi^{-1}(\mathbf{v}) = \mu \mathbf{v}, \quad \text{где} \quad \mu = \frac{1}{\lambda}
+\]
+
+\[
+\varphi(\varphi^{-1}(\mathbf{v})) = \varphi(\mu \mathbf{v}) \\
+\Rightarrow \mathbf{v} = \mu \varphi(\mathbf{v})
+\]
+
+\[
+\varphi(\mathbf{v}) = \lambda \mathbf{v}, \quad \text{где} \quad \lambda = \frac{1}{\mu}
+\]
+
+Таким образом существует связь между оператором и обратным к нему, притом собственные значения обратного оператора являются обратными собственными значениями исходного оператора
+
+\subsection{Задача 9}
+\textbf{Условие задачи:} В пространстве $\mathbb{R}^3$ заданы векторы:
+\[
+v_1 =
+\begin{pmatrix}
+1 \\
+-1 \\
+-1
+\end{pmatrix}, \quad
+v_2 =
+\begin{pmatrix}
+-1 \\
+2 \\
+2
+\end{pmatrix}, \quad
+v_3 =
+\begin{pmatrix}
+-1 \\
+2 \\
+3
+\end{pmatrix}.
+\]
+Можно ли в этом пространстве найти линейный оператор $\phi$, такой, что
+\begin{itemize}
+    \item $v_1$ является собственным вектором с собственным значением $1$,
+    \item $v_3$ является собственным вектором с собственным значением $2$,
+    \item выполнено равенство $\phi(v_2) = v_1 + v_2$?
+\end{itemize}
+Если можно, то найди матрицу этого оператора в стандартном базисе. Если нельзя, то объясни почему.
+
+k\textbf{Решение: }
+
+\[
+\phi(v_1) - v_1 \land \phi(v_2) = v_1 + v_2 \land \phi(v_3) = 2v_3
+\]
+
+\[
+P = \begin{pmatrix}
+    1 & -1 & -1 \\
+    -1 & 2 & 2 \\
+    -1 & 2 & 3 
+\end{pmatrix}
+\]
+
+\[
+P^{-1} = \begin{pmatrix}
+    2 & 1 & 0 \\
+1 & 2 & -1 \\
+0 & -1 & 1 \\
+\end{pmatrix}
+\]
+
+\[
+\varphi = \begin{pmatrix}
+    1 & 1 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 2 \\
+\end{pmatrix}
+\]
+
+\[
+A = P\cdot \phi \cdot P^{-1} = \begin{pmatrix}
+    2 & 3 & -2 \\
+    -1 & -3 & 3 \\
+    -1 & -5 & 5 \\
+\end{pmatrix}
+\]
+
+\subsection{Задача 10}
+\textbf{Условие задачи:} Определи ЖНФ (Жорданова нормальная форма) матрицы оператора $\phi: \mathbb{C}^3 \to \mathbb{C}^3$, определённого правилом $\phi(x) = Ax$, где:
+\[
+A =
+\begin{pmatrix}
+% Вставьте матрицу здесь.
+\end{pmatrix}.
+\]
+
+\textbf{Решение: }
+а) найдем хар многочлен: $(\lambda^2-2)^2-0$ Найдем собственный вектор: $y=2x$ Алгебраическая кратность - 2, геометрическая - 1. Тогда Жорданова матрица: 
+
+\[
+\begin{pmatrix}
+    2 & 1 \\
+    0 & 2 \\
+\end{pmatrix}
+\]
+
+б) хар многочлен: $(\lambda-(1+\sqrt{2}))(\lambda-(1-\sqrt{2}))$. Т.к собственные значения различны, то геом кратность 1, т.е жорданова форма будет диагональной: 
+
+\[
+\begin{pmatrix}
+    1+\sqrt{2} & 0 \\
+    0 & 1-\sqrt{2}
+\end{pmatrix}
+\]
+
+\subsection{Задача 11}
+\textbf{Условие задачи:} Возведи матрицу в степень, используя ЖНФ.
+\begin{enumerate}
+    \item 
+    \[
+    \begin{pmatrix}
+    1 & 1 \\
+    -1 & 3
+    \end{pmatrix}^{50};
+    \]
+    \item 
+    \[
+    \begin{pmatrix}
+    7 & -4 \\
+    14 & -8
+    \end{pmatrix}^{64}.
+    \]
+\end{enumerate}
+
+\textbf{Решение: }
+
+a) $(\lambda - 2)^2 $ алгебраическая кратность 2, собств вектор y=x, гк < ак, тогда 
+
+\[
+J = \begin{pmatrix}
+    2 & 1 \\
+    0 & 2 \\
+\end{pmatrix}
+\]
+
+
+проблема в том, что вектор у нас один, попробуем дополнить чтобы был линейно независим
+\[
+P =
+\begin{pmatrix}
+    1 & 0 \\
+    1 & 1 \\
+\end{pmatrix}
+\]
+
+\[
+A^{50} = PJ^{50}P^{-1} = 2^{49} \cdot \begin{pmatrix}
+    -48 & 50 \\
+    -50 & 52 \\
+\end{pmatrix}
+\]
+
+б)
+\[
+det(b - \lambda I) = \lambda(\lambda + 1)
+\]
+y = 7/4 x
+y = 2x
+\[
+\begin{pmatrix}
+    4 & 7 \\
+    7 & 2\\
+\end{pmatrix}
+\]
+
+\[
+B = PJ^{64}P^{-1} = \begin{pmatrix}
+    4 & 1 \\
+    7 & 2 \\
+\end{pmatrix} \cdot \begin{pmatrix}
+    0 & 0 \\
+    0 & 1 \\
+\end{pmatrix}^{64} \cdot \begin{pmatrix}
+    2 & -1 \\
+    -7 & 4\\
+\end{pmatrix}
+\]
+
+\[
+B = \begin{pmatrix}
+    -7 & 4 \\
+    -14 & 8 \\
+\end{pmatrix}
+\]
+
+
+
+\subsection{Задача 12}
+\textbf{Условие задачи:} На базовой кафедре базовых исследований базовой линейной алгебры базового университета, базированного в столице, сделали базовое открытие нового базового вида оператора. Оператор $\phi: \mathbb{R}^3 \to \mathbb{R}^3$, заданный по правилу $\phi(x) = Ax$, где
+\[
+A =
+\begin{pmatrix}
+-2 & 3 & -2 \\
+0 & -2 & 0 \\
+0 & 0 & -2
+\end{pmatrix},
+\]
+называется базированным, если любой ненулевой вектор $v \in V$ может быть дополнен до жорданового базиса. Определи, является ли данный оператор $\phi$ базированным.
+
+\textbf{Решение: }
+
+\[
+A + 2I = \begin{pmatrix}
+    0 & 3 & -2 \\
+    0 & 0 & 0 \\
+    0 & 0 & 0 \\
+\end{pmatrix}
+\]
+
+\[
+v = x_1 \begin{pmatrix}
+    1 \\
+    0\\
+    0\\
+\end{pmatrix}
++
+x_3 \begin{pmatrix}
+    0 \\
+    \frac{2}{3} \\
+    1
+\end{pmatrix}
+\]
+
+\[
+J =
+\begin{pmatrix}
+    -2 & 1 & 0 \\
+    0 & -2 & 0 \\
+    0 & 0 & -2 
+\end{pmatrix}
+
+Оператор называется базированным если любой ненулевой вектор может быть дополнен до жорданового базиса. 
+\]
+
+\subsection{Задача 13}
+\textbf{Условие задачи:} Пусть $\varphi: V \to V$ — обратимый оператор в комплексном векторном пространстве. Вырази все собственные значения оператора $(\varphi^2 - \varphi - I)$ через собственные значения $\varphi$.
+
+\textbf{Решение: }
+
+\[
+(\phi^2-\phi-I)(v) = \phi^2(v)-\phi(v)-v=\lambda^2v-\lambda v - v = (\lambda^2 - \lambda - 1)v
+\]
+Обобщим
+
+\[
+\Lambda' = \{ \mu \in \mathbb{C} \mid \mu = \lambda^2 - \lambda - 1, \ \lambda \in \Lambda \}
+\]
+
+\subsection{Задача 14}
+\textbf{Условие задачи:} Найди комплексные собственные значения следующих матриц $A, B \in M_{4 \times 4}(\mathbb{R})$.
+\begin{enumerate}
+    \item 
+    \[
+    A =
+    \begin{pmatrix}
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+    1 & 0 & 0 & 0
+    \end{pmatrix};
+    \]
+    \item 
+    \[
+    B =
+    \begin{pmatrix}
+    0 & 1 & 0 & 1 \\
+    1 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 1 \\
+    1 & 0 & 1 & 0
+    \end{pmatrix}.
+    \]
+\end{enumerate}
+a) 
+\[
+det(A-\lambda I) = \lambda^4 - 1 = 0 \Leftrightarrow \lambda_k = e^{i\frac{\pi k}{2}}, k = 0, 1, 2, 3
+\]
+1, -1, i, -i
+
+б)
+\[
+\det(B-\lambda I) = (-\lamba)(-\lambda^3+2\lambda) = \lambda^4-4\lambda^2
+\]
+2, -2, 0, 0
+
+\end{document}

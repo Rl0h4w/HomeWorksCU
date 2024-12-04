@@ -1,0 +1,425 @@
+\documentclass[a4paper,12pt]{article}
+
+% Кодировка и язык
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% Математические пакеты
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Графика
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+
+% Геометрия страницы
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% Гиперссылки
+\usepackage{hyperref}
+
+% Плавающие объекты
+\usepackage{float}
+
+% Дополнительные пакеты
+\usepackage{venndiagram}
+
+% Настройки заголовка
+\title{Домашнее задание}
+\author{Студент: \textbf{Ростислав Алексеевич Лохов}}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Дифференцирование. Часть 1}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Ростислав Алексеевич Лохов}
+
+    \vfill
+
+    \Large
+    АНО ВО "Центральный Университет"\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Дифференцирование. Часть 1}
+
+\subsection{Дифференцируемые функции и производная}
+
+\subsubsection{Задача 1 (1 балл)}
+Вычисли
+\[
+\lim_{x \to 0} \frac{\tan(\sin(x + a)) - \tan(\sin(a - x))}{x}.
+\]
+
+\textbf{Решение:}
+
+% Здесь вставьте ваше решение задачи 1
+
+\vspace{1cm}
+
+\subsection{Односторонние производные}
+
+\subsubsection{Задача 2 (1 балл)}
+Найди константы \( a \) и \( b \), чтобы функция
+\[
+f(x) =
+\begin{cases}
+\frac{x^3 - 2x^2 - 9x + 18}{x^2 + x - 6}, & \text{если } x < 2, \\
+a, & \text{если } x = 2, \\
+\frac{a}{2x} + b, & \text{если } x > 2.
+\end{cases}
+\]
+была непрерывной при \( x = 2 \). Определи, для каких \( x \) эта функция будет дифференцируемой при найденных значениях \( a \) и \( b \).
+
+\textbf{Решение:}
+
+% Здесь вставьте ваше решение задачи 2
+
+\vspace{1cm}
+
+\subsection{Правила дифференцирования}
+
+\subsubsection{Задача 3 (2 балла)}
+Найди производную функции на её области определения:
+\begin{enumerate}
+    \item[a)] \( y(x) = \frac{\sqrt{4} \cdot (8x - 3)^3}{x^2 - 1} \);
+    \item[b)] \( y(x) = \ln(\tan x) + \frac{1}{2} \cot 2x \);
+    \item[c)] \( y(x) = x \cdot 2^{1 - x^2} \);
+    \item[d)] \( y(x) = \frac{1}{3} \ln\left(\sqrt{9 + 4x^2}\right) - \frac{3}{x} \).
+\end{enumerate}
+
+\textbf{Решение:}
+
+% Здесь вставьте ваше решение задачи 3
+
+\vspace{1cm}
+
+\subsection{Частичные суммы и производные}
+
+\subsubsection{Задача 4 (0,5 балла)}
+Дана частичная сумма:
+\[
+f_n(x) = 1 + 2x + 3x^2 + \ldots + nx^{n-1}.
+\]
+Найди \( f'_n(x) \).
+
+\textbf{Решение:}
+
+% Здесь вставьте ваше решение задачи 4
+
+\vspace{1cm}
+
+\subsection{Производная в конкретной точке}
+
+\subsubsection{Задача 5 (1 балл)}
+Найди производную в точке \( x = 3 \):
+\[
+y(x) = \left(\cot\left(x^3\right)\right)^{\sqrt{3}} e^{x} - e^{-x}.
+\]
+
+\textbf{Решение:}
+
+% Здесь вставьте ваше решение задачи 5
+
+\vspace{1cm}
+
+\subsection{Обратные функции и их производные}
+
+\subsubsection{Задача 6 (1 балл)}
+Найди производную обратной функции к \( y(x) = x^2 + 2x + 2 \) в точках \( y = 1 \) и \( y = 2 \).
+
+\textbf{Решение:}
+
+% Здесь вставьте ваше решение задачи 6
+
+\vspace{1cm}
+
+\subsection{Понятие производной}
+
+\subsubsection{Задача 7 (1,5 балла)}
+Пользуясь определением, найди производные функций:
+\begin{enumerate}
+    \item[a)] \( y(x) = x^3 \);
+    \item[b)] \( y(x) = \frac{1}{x^2} \);
+    \item[c)] \( y(x) = \cos x \).
+\end{enumerate}
+
+\textbf{Решение:}
+a)
+
+\[
+\lim_{\delta \to 0}\frac{f(x + \delta) - f(x)}{\delta}
+\]
+
+\[
+\lim_{\delta \to 0} \frac{(x+\delta)^3-x^3}{\delta} = \lim_{\delta \to 0} \frac{3x^2\delta + 2x\delta^2+\delta^3}{\delta} = 3x^2
+\]
+
+b)
+
+\[
+\lim_{\delta \to 0} \frac{(x+\delta)^{-2}-x^{-2}}{
+\delta} = \lim_{\delta \to 0} \frac{-2x-\delta}{x^4-2x^3\delta + x^3\delta^2} = \frac{-2}{x^3}
+\]
+
+c)
+
+\[
+\lim_{\delta \to 0} \frac{\cos(x+\delta) - \cos(x)}{\delta} = \lim_{\delta \to 0} \frac{-2\sin(x+\frac{\delta}{2}) \sin(\frac{\delta}{2})}{\delta} = -\sin(x)
+\]
+
+
+\vspace{1cm}
+
+\subsection{Производные и пределы}
+
+\subsubsection{Задача 8 (3 балла)}
+Функция \( f \) имеет производную в точке \( x = a \). Найди предел
+\[
+\lim_{n \to \infty} n \left( f\left(a + \frac{1}{n}\right) - f\left(a - \frac{1}{n}\right) \right),
+\]
+считая \( f'(a) \) известной. 
+
+\textbf{Решение:}
+
+\[
+f'(x) = \lim_{\frac{1}{n} \to 0} \frac{f(a+\frac{1}{n}) - f(a)}{\frac{1}{n}} = \lim_{\frac{1}{n} \to 0} \frac{f(a) - f(a-\frac{1}{n})}{\frac{1}{n}} \Rightarrow  2f'(x) = \lim_{n \to \infty} \frac{f(a+\frac{1}{n}) - f(a-\frac{1}{n})}{\frac{1}{n}} 
+\]
+
+Тогда 
+
+\[
+\lim_{n \to \infty} n \left( f\left(a + \frac{1}{n}\right) - f\left(a - \frac{1}{n}\right) \right) = 2f'(a)
+\]
+\vspace{1cm}
+
+\subsection{Дифференцируемость в точке}
+
+\subsubsection{Задача 9 (2 балла)}
+Исследуй на дифференцируемость в точке \( x = 0 \) функцию
+\[
+y(x) =
+\begin{cases}
+x \sin\left(\frac{1}{x}\right), & \text{если } x \neq 0, \\
+0, & \text{если } x = 0.
+\end{cases}
+\]
+
+\textbf{Решение:}
+
+т.к если мы возьмем слева и справа производую, то получим, что конкретного значения у синуса нет, т.к в аргументе данной функции будет бесконечность и результатом будет осциляция между -1 и 1, т.е возникает ситуация, где левосторонняя и правосторонняя производные не равны между собой, следовательно функция недифференциируема в данной точке.
+
+\vspace{1cm}
+
+\subsection{Дифференцируемость и непрерывность}
+
+\subsubsection{Задача 10 (2 балла)}
+Найди \( f'_-(0) \) и \( f'_+(0) \) для функции \( f(x) = x - |x| \). Исследуй на дифференцируемость функцию \( f(x) \) в точке \( x = 0 \).
+
+\textbf{Решение:}
+
+\[
+f'_-(0) = 2, \quad f'_+(0) = 0.
+\]
+\vspace{1cm}
+
+\subsection{Построение графиков и производные}
+
+\subsubsection{Задача 11 (0,5 балла)}
+Построй график функции
+\[
+y(x) =
+\begin{cases}
+0, & \text{если } x \leq 0, \\
+4 - x, & \text{если } 0 < x < 3, \\
+\frac{1}{4 - x}, & \text{если } x \geq 3.
+\end{cases}
+\]
+Исследуй функцию \( y \) на непрерывность и дифференцируемость на \( \mathbb{R} \).
+
+\textbf{Решение:}
+
+% Здесь вставьте ваше решение задачи 11
+
+\vspace{1cm}
+
+\subsection{Непрерывность и дифференцируемость}
+
+\subsubsection{Задача 12 (4 балла)}
+Пусть функция \( f : \mathbb{R} \to \mathbb{R} \) дифференцируема в точке \( x_0 \). Верно ли, что существует окрестность точки \( x_0 \), в которой \( f \) непрерывна?
+
+\textbf{Решение:}
+\[
+f(x) = \begin{cases}
+    x^2, x \in \mathbb{Q}\\
+    -x^2, x \in \mathbb{R} \land x \not \in \mathbb{Q} \\
+\end{cases}
+\]
+в точке 0 функция дифференцируема, однако в окрестности она не дифференцируема и прерывна
+\[
+f'(x) = \lim_{\delta \to 0} \frac{f(\delta)}{\delta}
+\]
+
+т.е всё будет зависеть от дельта малого
+
+\vspace{1cm}
+
+\subsection{Геометрический смысл производной}
+
+\subsubsection{Задача 13 (1,5 балла)}
+Запиши уравнение той касательной к параболе \( y = 4 - x^2 \), которая:
+\begin{enumerate}
+    \item[a)] имеет угол наклона с осью Ox, равный \( \frac{3\pi}{4} \);
+    \item[b)] параллельна прямой \( y = 2x - 3 \).
+\end{enumerate}
+
+\textbf{Решение:}
+a)
+
+\[
+y=\tan(\frac{3\pi}{4})x+3+0.25 = -x+4.25
+\]
+
+b)
+\[
+y=2x+5
+\]
+\vspace{1cm}
+
+\subsection{Касательные и их углы}
+
+\subsubsection{Задача 14 (3 балла)}
+На параболе \( y = x^2 - 4x + 2 \) найди такие точки, что проведённые в них касательные к параболе проходят через точку \( (4; 1) \). Найди угол между этими касательными.
+
+\textbf{Решение:}
+очевидно, что тангенс угла наклона зависит от производной по этой функции, т.е 
+\[
+k = 2x_0-4
+\]
+Ур-ие касательной в точке $P(x_0, y_0)$ имеет вид: 
+
+\[
+1-x_0^2+4x_0 - 2 = (2x_0-4)(4-x_0)
+\]
+
+\[
+(x_0-5)(x_0-3)=0
+\]
+
+\[
+P_1(3, -1) \land P_2(5, 7) \Rightarrow m_1 = 2 \land m_2 = 6
+\]
+
+\[
+\tan(\theta) = \left| \frac{m_2-m_1}{1+m_1m_2} \right| \Rightarrow \theta = \arctan(\frac{4}{13})
+\]
+
+\vspace{1cm}
+
+\subsection{Сопоставление графиков}
+
+\subsubsection{Задача 15 (2 балла)}
+Сопоставь график каждой функции из (а)–(г) с графиком её производной из I–IV.
+\begin{enumerate}
+    \item[a)]
+    \item[б)]
+    \item[в)]
+    \item[г)]
+\end{enumerate}
+
+% Здесь, вероятно, необходимо вставить изображения графиков функций и их производных.
+
+\textbf{Решение:}
+
+a - II\\
+
+b - IV\\
+
+c - I\\
+
+d - III\\
+
+\vspace{1cm}
+
+\subsection{Практический смысл производной}
+
+\subsubsection{Задача 16 (1,5 балла)}
+Мяч выпал из окна без начальной скорости с высоты \( H = 122{,}5 \) м. Найди:
+\begin{enumerate}
+    \item[a)] Скорость мяча через 2 секунды после начала полета;
+    \item[b)] Скорость мяча в момент, когда он ударится о землю.
+\end{enumerate}
+Считай, что расстояние, которое мяч пролетит за время \( t \), равно \( s(t) = 4{,}9 t^2 \) (расстояние измеряется в метрах, \( t \) — в секундах).
+
+\textbf{Решение:}
+
+\[
+\frac{ds}{dt} = 9.7t = v(t)
+\]
+
+\[
+v(2) = 19.4
+\]
+
+\[
+H = s(t) \Rightarrow 122.5 = 4.9t^2 \Rightarrow t = 5 \Rightarrow v(5) = 9.7*5 = 48.5
+\]
+
+\vspace{1cm}
+
+\subsection{Скорость и время}
+
+\subsubsection{Задача 17 (1,5 балла)}
+Стоимость производства \( x \) единиц товара в рублях равна \( C(x) = 5000 + 10x + 0{,}05x^2 \).
+\begin{enumerate}
+    \item[1.] Найди среднюю скорость изменения \( C \), когда уровень производства изменился:
+    \begin{enumerate}
+        \item[a)] с \( x = 100 \) до \( x = 105 \);
+        \item[б)] с \( x = 100 \) до \( x = 101 \).
+    \end{enumerate}
+    \item[2.] Найди мгновенную скорость изменения \( C \), когда уровень производства \( x = 100 \).
+\end{enumerate}
+
+\textbf{Решение:}
+
+\[
+\frac{dC}{dx} = 0.1x + 10
+\]
+
+\[
+\overline{\frac{dC}{dx}} = \frac{C(x_2) - C(x_1)}{x_2 - x_1}
+\]
+\begin{enumerate}
+    \item a)20.25 б)20.05
+    \item 20
+    
+\end{enumerate}
+
+
+
+
+\vspace{1cm}
+
+\end{document}
