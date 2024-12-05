@@ -1,0 +1,327 @@
+\documentclass[a4paper,12pt]{article}
+
+% Кодировка и язык
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% Математические пакеты
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Графика
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+
+% Геометрия страницы
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% Гиперссылки
+\usepackage{hyperref}
+
+% Плавающие объекты
+\usepackage{float}
+
+% Дополнительные пакеты
+\usepackage{venndiagram}
+
+% Настройки заголовка
+\title{Домашнее задание}
+\author{Студент: \textbf{Ваше Имя Фамилия}}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Линейная Алгебра}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Ростислав Лохов}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+\subsection{Задача 1}
+
+\[
+A\cdot B = \begin{pmatrix}
+    5 & 6 \\
+    -4 & -5
+\end{pmatrix} \Rightarrow \det(AB) = -1
+\]
+
+Матрица обратима, столбцы \( B \) линейно независимы и строки \( A \) линейно независимы, значит можно искать оператор проекции на \( U \) вдоль \( W \):
+
+\[
+(AB)^{-1} = \begin{pmatrix}
+    5 & 6 \\
+    -4 & -5
+\end{pmatrix}
+\]
+
+\[
+B(AB)^{-1}Av = \begin{pmatrix}
+    -3 & -3 & -7 & -3 \\
+    4 & 4 & 10 & 4 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & -3 & 0
+\end{pmatrix} \cdot \begin{pmatrix}
+    2 \\
+    -1 \\
+    1 \\
+    -3
+\end{pmatrix} = \begin{pmatrix}
+    -1 \\
+    2 \\
+    1 \\
+    -3
+\end{pmatrix}
+\]
+
+\[
+w = v - u = \begin{pmatrix}
+    2 \\ -1 \\ 1 \\ -3
+\end{pmatrix} - \begin{pmatrix}
+    -1 \\ 2 \\ 1 \\ -3 
+\end{pmatrix} = \begin{pmatrix}
+    3 \\ -3 \\ 0 \\ 0
+\end{pmatrix}
+\]
+
+\[
+v = \begin{pmatrix}
+    -1 \\ 2 \\ 1 \\ -3 
+\end{pmatrix} + \begin{pmatrix}
+    3 \\ -3 \\ 0 \\ 0
+\end{pmatrix}
+\]
+
+\subsection{Задача 7}
+
+\[
+Ac = b, \quad A = 
+\begin{pmatrix}
+    \langle \mathbf{u}_1, \mathbf{u}_1 \rangle & \langle \mathbf{u}_1, \mathbf{u}_2 \rangle & \langle \mathbf{u}_1, \mathbf{u}_3 \rangle \\
+    \langle \mathbf{u}_2, \mathbf{u}_1 \rangle & \langle \mathbf{u}_2, \mathbf{u}_2 \rangle & \langle \mathbf{u}_2, \mathbf{u}_3 \rangle \\
+    \langle \mathbf{u}_3, \mathbf{u}_1 \rangle & \langle \mathbf{u}_3, \mathbf{u}_2 \rangle & \langle \mathbf{u}_3, \mathbf{u}_3 \rangle 
+\end{pmatrix},
+\quad
+\mathbf{c} =
+\begin{pmatrix}
+    c_1 \\
+    c_2 \\
+    c_3
+\end{pmatrix},
+\quad
+\mathbf{b} =
+\begin{pmatrix}
+    \langle \mathbf{v}, \mathbf{u}_1 \rangle \\
+    \langle \mathbf{v}, \mathbf{u}_2 \rangle \\
+    \langle \mathbf{v}, \mathbf{u}_3 \rangle 
+\end{pmatrix}
+\]
+
+\[
+\left[\begin{array}{ccc|c}
+1 & 1 & 1 & 1 \\
+4 & 10 & -2 & -8 \\
+4 & -2 & 10 & 16
+\end{array}\right]
+\]
+
+Система имеет бесконечно много решений
+
+\[
+c = \begin{pmatrix}
+    -1 \\ 0 \\ 2 
+\end{pmatrix}
+\]
+
+\[
+v_{\text{proj}} = -u_1 + 2u_3
+\]
+
+\[
+v_{\text{proj}} = \begin{pmatrix}
+    1 \\ -1 \\ -1 \\ 5
+\end{pmatrix}
+\]
+
+\subsection{Задача 8}
+
+\[
+AA^T = 
+\begin{pmatrix}
+15 & -12 & -6 \\
+-12 & 15 & 21 \\
+-6 & 21 & 51 
+\end{pmatrix}
+\]
+
+\[
+Av = \begin{pmatrix}
+    11\\ -13 \\ -17
+\end{pmatrix}
+\]
+
+\[
+AA^Ty=Av
+\]
+
+\[
+Pv = \begin{pmatrix}
+    \frac{8}{3} \\ 1 \\ -\frac{5}{3} \\ -\frac{2}{3}
+\end{pmatrix}
+\]
+
+\[
+v - Pv = 
+\begin{pmatrix}
+    \frac{1}{3} \\ -2 \\ -\frac{4}{3} \\ \frac{5}{3}
+\end{pmatrix}
+\]
+
+\subsection{Задача 9}
+
+\[
+Av = \begin{pmatrix}
+    11 \\ 16
+\end{pmatrix}
+\]
+
+\[
+AA^T = \begin{pmatrix}
+    10 & 18 \\
+    18 & 40 \\
+\end{pmatrix}
+\]
+
+\[
+A^T(AA^T)^{-1}Av = \begin{pmatrix}
+    2 \\ -0.5
+\end{pmatrix}
+\]
+
+\[
+p = A^T \cdot A^T(AA^T)^{-1}Av = \begin{pmatrix}
+    3 \\ 2 \\ 1 \\ 0
+\end{pmatrix}
+\]
+
+\[
+\|p\| = \sqrt{14}
+\]
+
+\subsection{Задача 10}
+\[
+A^TAx = A^Tb
+\]
+
+\[
+A^TA = \begin{pmatrix}
+-18 & -3 & 21 \\
+-3 & 18 & -21 \\
+21 & -21 & 42 
+\end{pmatrix}
+\]
+
+\[
+A^Tb =
+\begin{pmatrix}
+5 \\ 5 \\ 0
+\end{pmatrix}
+\]
+
+\[
+x = \begin{pmatrix}
+    \frac{1}{3} \\ \frac{1}{3} \\ 0  
+\end{pmatrix} + t \begin{pmatrix}
+    -1 \\ 1 \\ 1
+\end{pmatrix}
+\]
+
+\subsection{Задача 11}
+
+\[
+u_1 = 1, \quad 
+\langle u_1, u_1 \rangle = 2
+\]
+
+\[
+u_2 = x - \frac{\langle x, u_1 \rangle}{\langle u_1, u_1 \rangle} u_1 = x, \quad 
+\langle u_2, u_2 \rangle = \frac{2}{3}
+\]
+
+\[
+u_3 = x^2 - \frac{1}{3}, \quad 
+\langle u_3, u_3 \rangle = \frac{8}{45}
+\]
+
+\[
+u_4 = x^3 - 0.6x, \quad 
+\langle u_4, u_4 \rangle = \frac{8}{175}
+\]
+
+\[
+D =  \sqrt{ \|x^4\|^2 - \sum_{i=1}^4 \frac{|\langle x^4, u_i \rangle|^2}{\|u_i\|^2} }
+\]
+
+\[
+\|x^4\|^2 = \int_{-1}^{1} x^8 \, dx = \frac{2}{9}
+\]
+
+\[
+D = \frac{8\sqrt{2}}{105}
+\]
+
+\subsection{Задача 12}
+\[
+\|Ax - b\|_2^2 = (Ax - b)^T(Ax - b) = x^TA^TAx - 2b^TAx + b^Tb
+\]
+
+\[
+\lambda \|x\|^2 = \lambda x^Tx
+\]
+
+\[
+f(x) = \|Ax - b\|^2 + \lambda \|x\|^2 = x^T(A^TA + \lambda I)x - 2b^TAx + b^Tb 
+\]
+
+Т.к \( b^Tb = \text{const} \), то необходимо найти приближенное решение.
+
+\[
+f(x) = x^T(A^TA + \lambda I)x - 2b^TAx
+\]
+
+\subsection{Задача 13}
+
+\[
+\langle \pi(v), u \rangle = \langle v, \pi^*(u) \rangle \quad \forall v, u \in V.
+\]
+Т.к \( \pi \) является проекцией,
+\[
+\pi^*(v) = \text{Proj}_{U^\perp}^{W^\perp}(v), \quad \forall v \in V.
+\]
+
+\end{document}
