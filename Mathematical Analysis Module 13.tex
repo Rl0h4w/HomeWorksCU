@@ -1,0 +1,278 @@
+\documentclass[a4paper,12pt]{article}
+
+% Кодировка и язык
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% Математические пакеты
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Графика
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+
+% Геометрия страницы
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% Гиперссылки
+\usepackage{hyperref}
+
+% Плавающие объекты
+\usepackage{float}
+
+% Дополнительные пакеты
+\usepackage{venndiagram}
+
+% Настройки заголовка
+\title{Домашнее задание}
+\author{Студент: \textbf{Ваше Имя Фамилия}}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Математический Анализ}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Ростислав Лохов}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Второе достаточное условие экстремума}
+
+\subsection{Задача 8}
+$f(x) = f(-x) \Rightarrow f'(x) = f'(-x) \Rightarrow f''(x) = f''(-x)$
+
+
+$f'(-x)=-f'(x) \Rightarrow f'(0)+f'(0) = 0 \Rightarrow f'(0) = 0$
+
+Тогда пользуясь вторым достаточным условием экстремума:
+
+$f'(0)=0 \land |f''(x)| > 0 \Rightarrow |f''(x)| \ne 0$ точка 0 является точкой экстремума.
+
+\section{Неравенство Йенсена}
+
+\subsection{Задача 9}
+
+\[
+(a_1^2+...+a_n^2)(b_1^2+...+b_n^2) \ge (a_1b_1 + a_nb_n)^2
+\]
+
+\[
+w_i = \frac{a_i^2}{\sum_{1}^{n}a_i^2}
+\]
+
+сумма всех w равна 1
+
+Пусть
+\[
+x_i = \frac{b_i}{a_i}
+\]
+
+Тогда по неравенству Йенсена: 
+\[
+\left( \sum_{i=1}^n \frac{a_i^2}{a_1^2 + a_2^2 + \dots + a_n^2} \cdot \frac{b_i}{a_i} \right)^2 \leq \sum_{i=1}^n \frac{a_i^2}{a_1^2 + a_2^2 + \dots + a_n^2} \cdot \left( \frac{b_i}{a_i} \right)^2
+\]
+
+\[
+\frac{\left( \sum_{i=1}^n a_i b_i \right)^2}{\left( \sum_{i=1}^n a_i^2 \right)^2} \leq \frac{\sum_{i=1}^n b_i^2}{\sum_{i=1}^n a_i^2}
+\]
+
+домножим обе части на знаменатель:
+\[
+\left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left( \sum_{i=1}^n b_i^2 \right)
+\]
+
+чтд
+
+\subsection{Задача 10}
+Неравенство Юнга т.к $\frac{1}{p} + \frac{1}{q} = 1$:
+
+\[
+ab \le \frac{a^p}{p} + \frac{b^q}{q}
+\]
+
+тогда введем индексы и проссумируем
+
+\[
+\sum_{i=1}^{n} a_i b_i \leq \sum_{i=1}^{n} \left( \frac{a_i^{p}}{p} + \frac{b_i^{q}}{q} \right) = \frac{1}{p} \sum_{i=1}^{n} a_i^{p} + \frac{1}{q} \sum_{i=1}^{n} b_i^{q}
+\]
+
+Тогда по неравенству Йенсена:
+
+\[
+\frac{1}{p} \sum_{i=1}^{n} a_i^{p} + \frac{1}{q} \sum_{i=1}^{n} b_i^{q} \geq \left( \sum_{i=1}^{n} a_i^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{n} b_i^{q} \right)^{\frac{1}{q}}
+\]
+
+Обьединяем, получаем:
+
+\[
+    \sum_{i=1}^{n} a_i b_i \leq \frac{1}{p} \sum_{i=1}^{n} a_i^{p} + \frac{1}{q} \sum_{i=1}^{n} b_i^{q} \leq \left( \sum_{i=1}^{n} a_i^{p} \right)^{\frac{1}{p}} \left( \sum_{i=1}^{n} b_i^{q} \right)^{\frac{1}{q}}
+\]
+
+\section{Формула Тейлора с остаточным членом в форме Пеано}
+\subsection{Задача 12}
+
+\[
+ch(1) + sh(1)(x-1) + o((x-1)^2)
+\]
+
+\section{Формула Тейлора с остаточным членом в форме Лагранжа}
+\subsection{Задача 13}
+\[
+x + \frac{x^3}{3!} + R_3
+\]
+
+Т.к в разложении нечетной функции учавствуют только нечетные степени, то
+
+\[
+|R_3| \le |\frac{f^{(5)}(\xi)}{5!}x^5 = |\frac{x^5}{5!}|
+\]
+
+\[
+|R_3| \le 8.333\cdot 10^{-8}
+\]
+
+\[
+|sin(0.01)-0.1-\frac{0.001}{6}| \le 10^{-7}
+\]
+чтд
+
+\subsection{Задача 14}
+Разложим около точки $x = 4 + h h = 1 x_0 = 4 f = \sqrt{4 + h} \Rightarrow f(x) = 2 \cdot \left(1 + 0.25h\right)^{0.5}$
+
+Воспользуемся биномиальным разложением: $(1+z)^k=1+kz+\frac{k(k-1)}{2!}z^2+\frac{k(k-1)(k-2)}{3!}z^3...$
+
+k = 0.5 z = 0.25 $T_0 = 1, T_1=0.125, T_2 = -\frac{1}{128}, T_3 = \frac{1}{1024}, T_4 = \frac{-15}{98304}, T_5 = \frac{7}{262144}$
+
+$S=\sum_{0}^5 T_i = \frac{586174}{131072}$
+
+$T_6=\frac{945}{188743680} \approx -0.000005$
+
+\[
+    \left|2.2361 - 2.2360679775\right| \approx 0.000032 \leq 10^{-4}
+\]
+
+\subsection{Задача 15}
+По теореме Лагранжа:
+
+Поскольку $ f $дифференцируема на $[0;1]$и $ f(0) = f(1) = 0 $, по теореме Лагранжа существует точка $ c \in (0;1) $, такая что:
+\[
+f'(c) = \frac{f(1) - f(0)}{1 - 0} = 0.
+\]
+То есть, существует точка $ c $, в которой первая производная равна нулю.
+
+Для любой точки $ x \in [0;1] $применим неравенство Липшица для производной:
+\[
+|f'(x) - f'(c)| \leq \sup_{t \in [0;1]} |f''(t)| \cdot |x - c| \leq A |x - c|.
+\]
+Поскольку $ f'(c) = 0 $, получаем:
+\[
+|f'(x)| \leq A |x - c|.
+\]
+
+Максимальное значение $ |x - c| $на отрезке $[0;1]$достигается, когда $ x $находится на границах отрезка относительно $ c $. Наиболее «жесткая» оценка достигается, когда $ c = \frac{1}{2} $, тогда:
+\[
+|x - c| \leq \frac{1}{2}.
+\]
+Следовательно:
+\[
+|f'(x)| \leq A \cdot \frac{1}{2} = \frac{A}{2}.
+\]
+
+чтд
+
+\subsection{Задача 16}
+
+По формуле косинусов суммы:
+
+\[
+f(x) = \frac{\sqrt{2}}{2}\cos(2x) - \frac{\sqrt{2}}{2}\sin(2x)   
+\]
+
+Раскладываем маклоореном
+
+\[
+f(x) = \frac{\sqrt{2}}{2} \sum_{k=0}^{\infty} \frac{(-1)^k (2x)^{2k}}{(2k)!} - \frac{\sqrt{2}}{2} \sum_{k=0}^{\infty} \frac{(-1)^k (2x)^{2k+1}}{(2k+1)!}
+\]
+
+\subsection{Задача 17}
+
+a) $ f(x) = \sum_{k=0}^n \frac{8(-\ln 2)^k}{k!} x^k + o(x^n) $
+b) $ f(x) = \frac{1}{2} \sum_{k=0}^n \frac{(2k-1)!!}{2^k \cdot k!} \left(\frac{x}{4}\right)^k + o(x^n) $
+c) $ f(x) = 2 - \sum_{k=1}^n \frac{1}{k} \left(\frac{x}{e}\right)^k + o(x^n) $
+
+
+\subsection{Задача 19}
+
+$f(x) = e^{x} + x^{2} |x| = \left(1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + \cdots \right) + \left(x^{3} \cdot \text{sign}(x)\right)$
+n=1: $f(x) = 1 + x + o(x)$
+
+n=2: $f(x) = 1 + x + \frac{x^2}{2} + o(x^2)$
+
+n=3+: разложение не соответствует условию т.к остаточный член не стремится к нулю при делении на $x^n$
+
+\subsection{Задача 28}
+\[
+f(x) = 1 + x + \frac{x^2}{2}-\frac{x^3}{3} + O(x^3)
+\]
+
+\[
+f'''(x)|_{0} =  -2
+\]
+
+\subsection{Задача 29}
+
+\[
+f(x) = 1 + 2x - \frac{4x^3}{3} + o(x^3)
+\]
+
+\[
+f'''(0) = -8
+\]
+
+\subsection{Задача 30}
+\[
+f(x) = x - \frac{x^3}{3} + \frac{2x^5}{15} + O(x^6)
+\]
+
+\subsection{Задача 31}
+
+\[
+\arcsin(x^3) = x^3+\frac{x^9}{6} + o(x^9)
+\]
+
+\[
+ln(1+x^2) = x^2-\frac{x^4}{2} + \frac{x^6}{3} + o(x^6)
+\]
+
+\[
+f(x) = x + \frac{x^3}{2} - \frac{x^5}{12} + o(x^5)
+\]
+
+\end{document}

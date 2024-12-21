@@ -1,0 +1,303 @@
+\documentclass[a4paper,12pt]{article}
+
+% Кодировка и язык
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% Математические пакеты
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Графика
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+
+% Геометрия страницы
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% Гиперссылки
+\usepackage{hyperref}
+
+% Плавающие объекты
+\usepackage{float}
+
+% Дополнительные пакеты
+\usepackage{venndiagram}
+
+% Настройки заголовка
+\title{Домашнее задание}
+\author{Студент: \textbf{Ростислав Лохов}}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Линейная Алгебра}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Ростислав Лохов}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Сингулярное разложение (SVD)}
+
+\subsection{Задача 4}
+\textbf{Условие задачи:}
+
+\[
+S = AA^T = \begin{pmatrix}
+    6 & -5 \\
+    -5 & 6 \\
+\end{pmatrix}
+\]
+
+\[
+v_1 = \begin{pmatrix}
+    -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2}
+\end{pmatrix} \quad \text{и} \quad v_2 = \begin{pmatrix}
+\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2}
+\end{pmatrix}
+\]
+
+\[
+S = \begin{pmatrix}
+    -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+    \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+\end{pmatrix} \begin{pmatrix}
+    11 & 0 \\
+    0 & 1 \\
+\end{pmatrix} \begin{pmatrix}
+    -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+    \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+\end{pmatrix}
+\]
+
+\[
+V = \begin{pmatrix}
+    1 & -1 \\
+    2 & -1 \\
+    -1 & 2 
+\end{pmatrix} \begin{pmatrix}
+    -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+    \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+\end{pmatrix} \begin{pmatrix}
+    \sqrt{11} & 0 \\
+    0 & 1 \\
+\end{pmatrix} = \begin{pmatrix}
+    -\frac{\sqrt{22}}{2} & 0 \\
+    -\frac{3\sqrt{22}}{22} & \frac{\sqrt{2}}{2} \\
+    \frac{3\sqrt{22}}{22} & \frac{\sqrt{2}}{2}
+\end{pmatrix}
+\]
+
+\[
+A = U\Sigma V^T = \begin{pmatrix}
+    1 & 2 & -1 \\
+    -1 & -1 & 2 \\
+\end{pmatrix}
+\]
+
+Ближайшая матрица по норме Фробениуса ранга 1:
+
+\[
+B_1 = \begin{pmatrix}
+    -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+    \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} \\
+\end{pmatrix} \sqrt{11} V^T = \begin{pmatrix}
+    1 & \frac{3 + \sqrt{11}}{2} & \frac{-3 + \sqrt{11}}{2} \\
+    -1 & \frac{-3 + \sqrt{11}}{2} & \frac{3 + \sqrt{11}}{2}
+\end{pmatrix}
+\]
+
+\subsection{Задача 5}
+\[
+A = \begin{pmatrix}
+    -1 & 3 & 3 \\
+    3 & -4 & -4 \\
+    3 & -4 & -4 \\
+\end{pmatrix}
+\]
+
+\[
+AA^T = \begin{pmatrix}
+    19 & -27 & -27 \\
+    -27 & 41 & 41 \\
+    -27 & 41 & 41 \\
+\end{pmatrix}
+\]
+
+\[
+\det(AA^T-\lambda I) = (\lambda-100)(\lambda-1)\lambda = 0
+\]
+
+\[
+V = \begin{pmatrix}
+    -2 & 3 & 0 \\
+    3 & 1 & -1 \\
+    3 & 1 & 1 \\
+\end{pmatrix}
+\]
+
+\[
+V_{\text{норм}} = \begin{pmatrix}
+    -\frac{\sqrt{22}}{11} & \frac{3\sqrt{11}}{11} & 0 \\
+    \frac{3\sqrt{22}}{22} & \frac{\sqrt{11}}{11} & -\frac{\sqrt{2}}{2} \\
+    \frac{3\sqrt{22}}{22} & \frac{\sqrt{11}}{11} & \frac{\sqrt{2}}{2} \\
+\end{pmatrix}
+\]
+
+SVD:
+
+\[
+\begin{pmatrix}
+    \frac{\sqrt{22}}{11} & \frac{3\sqrt{11}}{11} & 0 \\
+    \frac{3\sqrt{22}}{22} & \frac{\sqrt{11}}{11} & -\frac{\sqrt{2}}{2} \\
+    \frac{3\sqrt{22}}{22} & \frac{\sqrt{11}}{11} & \frac{\sqrt{2}}{2} \\
+\end{pmatrix} \begin{pmatrix}
+    10 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1 \\
+\end{pmatrix} \begin{pmatrix}
+    -\frac{\sqrt{22}}{11} & \frac{3\sqrt{11}}{11} & 0 \\
+    \frac{3\sqrt{22}}{22} & \frac{\sqrt{11}}{11} & -\frac{\sqrt{2}}{2} \\
+    \frac{3\sqrt{22}}{22} & \frac{\sqrt{11}}{11} & \frac{\sqrt{2}}{2} \\
+\end{pmatrix}^T = \begin{pmatrix}
+    -1 & 3 & 3 \\
+    3 & -4 & -4 \\
+    3 & -4 & -4 \\
+\end{pmatrix}
+\]
+
+\subsection{Задача 7}
+
+\[
+A = \begin{pmatrix}
+    3 & 1 & 1 \\
+    1 & 3 & -1 \\
+    1 & -1 & 3 \\
+\end{pmatrix}
+\]
+
+Можно подобрать $B$, просто очень внимательно посмотрев:
+
+\[
+B = \begin{pmatrix}
+    1 & 1 & 1 \\
+    1 & 1 & -1 \\
+    1 & -1 & 1 \\
+\end{pmatrix}
+\]
+
+\subsection{Задача 10}
+\[
+\varphi: v \mapsto v\varphi^* 
+\]
+
+\[
+\varphi \varphi^* = \varphi^*\varphi
+\]
+
+\[
+\varphi(x) = Ax, \varphi^*(x) = Bx = A^Tx \implies AA^T = A^TA
+\]
+
+Пусть $u$ - собственный вектор для $A$:
+
+\[
+Au = \lambda u
+\]
+
+\[
+AA^Tu = A^TAu = \lambda A^Tu
+\]
+
+\[
+A^Tu \text{ - собственный для } A
+\]
+
+\[
+\varphi^*(u) \text{ - собственный для } \varphi \text{ c собственным значением } \lambda
+\]
+
+$S$ - собственное подпространство $\varphi$ с собственным значением $\lambda$, выберем ортонормированный базис в $S$ из собственных векторов.
+
+Докажем для всех базисных векторов:
+
+$\forall v_i: \varphi^*v_i = \lambda v_i$
+
+Рассмотрим $v_1$ (для остальных доказывается аналогично)
+
+$\varphi^*v_1$ - собственный вектор $\varphi^*v_1 \in S$
+
+$\varphi^*v_1 = \beta_1 v_1 + \beta_2 v_2 + \cdots + \beta_s v_s$
+
+Рассмотрим:
+
+$\langle v_1, \varphi v_1 \rangle = \lambda \langle v_1, v_1 \rangle = \lambda$
+
+$\langle \varphi v_1, v_1 \rangle = \beta_1 \implies \beta_1 = \lambda$ 
+
+Рассмотрим $\forall i \neq 1$:
+
+$\langle v_1, \varphi v_i \rangle = \lambda \langle v_i, v_1 \rangle = 0$
+
+$\langle \varphi v_1, v_i \rangle = \beta_i \implies \beta_i = 0 \implies \varphi^*v_1 = \lambda v_1 \implies \forall v \in S: \varphi^*v = \lambda v$
+
+Что и требовалось доказать.
+
+\subsection{Задача 11}
+$U$, $S$, $V$ - Рон, Гарри и Гермиона соответственно. 
+
+$A = USV$
+
+$\det(USV - \lambda I)$
+
+\[
+A' = C^{-1}AC = \begin{pmatrix}
+    0.5 & 2.5 \\
+    -0.5 & -0.5 \\
+\end{pmatrix}
+\]
+
+$A'=USV^T=UQAQ^TV^T \implies A'A'^T = US^2U^T$
+
+\[
+A'A'^T = \begin{pmatrix}
+    6.5 & -1.5 \\
+    -1.5 & 0.5 \\
+\end{pmatrix}
+\]
+
+\[
+\det(A'A'^T - \lambda I) = 4\lambda^2 - 28\lambda + 4 = 0
+\]
+
+\[
+\text{spec} \left\{\sqrt{\frac{7\pm\sqrt{45}}{2}}\right\}
+\]
+
+\end{document}
