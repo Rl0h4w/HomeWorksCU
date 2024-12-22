@@ -1,0 +1,129 @@
+\documentclass[a4paper,12pt]{article}
+
+% Кодировка и язык
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% Математические пакеты
+\usepackage{amsmath,amsfonts,amssymb}
+
+% Графика
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{pgfplots}
+
+% Геометрия страницы
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% Гиперссылки
+\usepackage{hyperref}
+
+% Плавающие объекты
+\usepackage{float}
+
+% Дополнительные пакеты
+\usepackage{venndiagram}
+
+% Настройки заголовка
+\title{Домашнее задание}
+\author{Студент: \textbf{Ваше Имя Фамилия}}
+\date{\today}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \Huge
+    \textbf{Домашнее задание}
+
+    \vspace{0.5cm}
+    \LARGE
+    По курсу: \textbf{Математический Анализ}
+
+    \vspace{1.5cm}
+
+    \textbf{Студент: Ростислав Лохов}
+
+    \vfill
+
+    \Large
+    АНО ВО Центральный университет\\
+    \vspace{0.3cm}
+    \today
+
+\end{titlepage}
+
+% Содержание
+\tableofcontents
+\newpage
+
+% Основной текст
+\section{Применение формулы Тейлора}
+
+\subsection{Задача 5}
+
+Разложим в ряд Маклорена каждое слагаемое:
+
+\[
+\frac{x + \frac{x^3}{3}+O(x^6)-x}{x-\frac{x^3}{6}+\frac{x^5}{120}+O(x^6)-(x+\frac{x^3}{6}+\frac{x^5}{120}+O(x^6))} =  -1
+\]
+
+\subsection{Задача 6}
+
+\[
+\frac{x + \frac{x^3}{3}+O(x^6)-\frac{x}{1+x^2}}{x-\frac{x^3}{6}+\frac{x^5}{120}+O(x^6)-(x+\frac{x^3}{6}+\frac{x^5}{120}+O(x^6))} = -4
+\]
+
+\subsection{Задача 7}
+
+разложим каждое слагаемое в Маклорена
+
+\[
+\frac{x-\frac{x^3}{6}+\frac{3x^5}{40}+O(x^5)+1-x+1.5x^2-2.5x^3+4.375x^4+O(x^5)-(1+1.5x^2+0.375x^4+O(x^6))}{\frac{x^3}{6}+\frac{11x^5}{120}+O(x^5)} = -16
+\]
+
+\subsection{Задача 8}
+\[
+(2-\frac{2x^2}{3}+\frac{2x^4}{9}+O(x^6)-(1-\frac{2x^2}{3}-\frac{2x^4}{9}+O(x^6)))^{\frac{1}{x^4}-\frac{5}{6x^2}+\frac{1}{24}+O(x^2)} = (\frac{4x^4}{9}+1)^{O(x^2)+\frac{1}{x^4}-\frac{5}{6x^2}+\frac{1}{24}}=e^{\frac{4}{9}}
+\]
+
+\subsection{Задача 9}
+\[
+(1-\frac{x}{2}+frac{11x^2}{24}+O(x^2)+\frac{x}{2}-\frac{5x^2}{8}+O(x^2))^{\frac{1}{x^2}-\frac{2}{3}+O(x^2)} = \frac{1}{\sqrt[6]{e}}
+\]
+
+\subsection{Задача 10}
+\[
+(1+x+\frac{x^2}{2}+\frac{x^3}{2}+o(x^3)-x-\frac{x^2}{2}-\frac{x^3}{3}+o(x^3))^{\frac{3}{x^3}-\frac{3}{2x}-\frac{53x}{140}+O(x^2)} = \sqrt{e}
+\]
+
+\subsection{Задача 11}
+
+\[
+x(x+1-\frac{1}{2x}+\frac{1}{2x^2}+o(\frac{1}{x^2})-(2x+1-\frac{1}{4x}+\frac{1}{8x^2}+o(\frac{1}{x^2}))+x)=-0.25
+\]
+
+\subsection{Задача 14}
+
+\[
+S = 20\cdot 1 + \frac{2\cdot 1^2}{2} = 21
+\]
+
+\subsection{Задача 15}
+Разложим в ряд Маклорена, т.к l гораздо меньше L:
+
+\[
+E = \frac{q}{L^2} - (\frac{q}{L^2} - \frac{2q}{L^3}l + \frac{3q}{L^4}l^2 - \frac{4q}{L^5}l^3 + ...)
+\]
+
+чтд: в ведущем порядке поле пропорционально $\frac{1}{L^3}$.
+
+
+
+
+\end{document}
